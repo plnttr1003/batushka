@@ -61,19 +61,39 @@ body {
     padding-top: 90px;
 }
 
+.timeline .period-title {
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.period-date {
+    width: 30vw;
+    padding-right: 20px;
+    border-right: 1px solid #000;
+    height: 90px;
+}
+
+.period-date:first-child {
+    border-color: transparent;
+}
+
 .timeline .date-block {
     position: relative;
     display: flex;
 }
 
 .timeline .date-block .extra-text {
-    position: absolute;
     max-width: 18vw;
-    top: 20px;
-    left: 20px;
+    margin-left: 20px;
     font-style: italic;
+    font-weight: normal;
     font-size: 15px;
     line-height: 23px;
+    text-align: left;
 }
 
 .timeline .date-block .date {
@@ -87,6 +107,9 @@ body {
     font-weight: 500;
     font-size: 14px;
     line-height: 23px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -99,7 +122,15 @@ body {
     content: '';
     display: block;
     background: #000;
-    top: 28px;
+    top: -2px;
+}
+
+.timeline .date-block .date-empty:after {
+    display: none;
+}
+
+.timeline .date-block:last-child .date {
+    border-color: transparent;
 }
 
 .timeline .date-block .text {
@@ -116,4 +147,8 @@ body {
     font-size: 22px;
     line-height: 30px;
     padding-top: 15px;
+}
+
+.extra-text, .date-text, .text {
+    margin-top: -30px;
 }

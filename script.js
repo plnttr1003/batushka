@@ -3,28 +3,45 @@ var timelineBlock = document.querySelector('.timeline-main');
 var render = function() {
     console.log(data.periods);
     data.periods.forEach(function(period) {
+        renderTitle(period.name);
         period.dates.forEach(function(data) {
             renderDate(data);
         })
     })
 };
 
-var createElement = function (text, className) {
+var createElement = function (text, className, elem) {
     var el = document.createElement('div');
-    el.innerText = text;
+    if (elem) {
+        el.innerHTML = '<div class="date-text">' + text + '</div>'
+    } else {
+        el.innerText = text;
+    }
     el.className = className;
     return el;
 };
 
+var renderTitle = function (name) {
+    var el = document.createElement('div');
+    el.className = 'period-date';
+    el.appendChild(createElement(name, 'period-title'));
+    timelineBlock.appendChild(el);
+};
+
 var renderDate = function(data) {
     var el = document.createElement('div');
+    var date;
+
+    date = data.date
+        ? el.appendChild(createElement(data.date, 'date', 'wrap'))
+        : el.appendChild(createElement('', 'date date-empty'));
 
     if (data.extraText) {
-        el.appendChild(createElement(data.extraText, 'extra-text'));
+        date.appendChild(createElement(data.extraText, 'extra-text'));
     }
-    if (data.date) {
-        el.appendChild(createElement(data.date, 'date'));
-    }
+
+    el.appendChild(date);
+
     if (data.text) {
         el.appendChild(createElement(data.text, 'text'));
     }
