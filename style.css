@@ -77,6 +77,14 @@ body {
     height: 90px;
 }
 
+.period-date.fixed .period-title {
+    position: fixed;
+    top: 100px;
+    width: calc(30vw - 40px);
+    z-index: 1;
+    text-shadow: 0 0 20px #fff;
+}
+
 .period-date:first-child {
     border-color: transparent;
 }
@@ -94,6 +102,7 @@ body {
     font-size: 15px;
     line-height: 23px;
     text-align: left;
+    color: #525252;
 }
 
 .timeline .date-block .date {

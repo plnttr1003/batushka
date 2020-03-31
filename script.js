@@ -1,4 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
+var periodDates = [];
+var scrolledTitles = [];
 
 var render = function() {
     console.log(data.periods);
@@ -49,8 +51,34 @@ var renderDate = function(data) {
     el.className = data.featured ? 'date-block featured' : 'date-block';
 
     timelineBlock.appendChild(el);
+
+    periodDates = document.querySelectorAll('.period-date');
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     render();
+});
+
+window.addEventListener('scroll', function() {
+    var windowHeight = document.body.offsetHeight;
+
+    console.log(pageYOffset);
+    console.log(document.body.offsetHeight);
+    console.log('periodDates::', periodDates);
+    periodDates.forEach(function(periodCont, i) {
+        var top = periodCont.getBoundingClientRect().top;
+        var nextTop;
+        if (periodDates[i + 1]) {
+            nextTop = periodDates[i + 1].getBoundingClientRect().top;
+        }
+
+        console.log('TOP::', top, nextTop);
+
+        if (top < 100 && top > - (nextTop / 4)) {
+            periodCont.classList.add('fixed');
+            // scrolledTitles.push(periodCont);
+        } else {
+            periodCont.classList.remove('fixed');
+        }
+    })
 });
