@@ -16,10 +16,30 @@ body {
     background: #30756D;
     color: #fff;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: center;
     text-align: center;
+    background: url(images/background.jpg) 50% no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.intro .intro-text {
+    height: 80vh;
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.intro .batushka {
+    background: url(images/01.png) no-repeat 90% bottom;
+    bottom: 0;
+    width: 30vw;
+    height: 80vh;
+    background-size: contain;
+    left: 10vw;
 }
 
 .intro h1 {
@@ -33,6 +53,8 @@ body {
     font-weight: 500;
     font-size: 28px;
     line-height: 38px;
+    width: 490px;
+    text-align: left;
 }
 
 .timeline {
