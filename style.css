@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Avenir Next', Arial, sans-serif;
+}
+
+.intro {
+    height: 100vh;
+    width: 100%;
+    background: #30756D;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro h1 {
+    font-family: 'Batushka', Times, serif;
+    font-size: 200px;
+    line-height: 220px;
+    font-weight: normal;
+}
+
+.intro h2 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 38px;
+}
+
+.timeline {
+    padding-top: 90px;
+}
+
+.timeline .date-block {
+    position: relative;
+    display: flex;
+}
+
+.timeline .date-block .extra-text {
+    position: absolute;
+    max-width: 18vw;
+    top: 20px;
+    left: 20px;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.timeline .date-block .date {
+    width: 30vw;
+    padding-right: 20px;
+    border-right: 1px solid #000;
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    flex: 0 0 30vw;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    position: relative;
+}
+
+.timeline .date-block .date:after {
+    position: absolute;
+    right: -4px;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    content: '';
+    display: block;
+    background: #000;
+    top: 28px;
+}
+
+.timeline .date-block .text {
+    max-width: 623px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.timeline .date-block.featured .text {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    padding-top: 15px;
+}
