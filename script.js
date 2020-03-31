@@ -74,7 +74,7 @@ window.addEventListener('scroll', function() {
 
         console.log('TOP::', top, nextTop);
 
-        if (top < 100 && top > - (nextTop / 4)) {
+        if (top < 100 && top > (- nextTop)) {
             periodCont.classList.add('fixed');
             // scrolledTitles.push(periodCont);
         } else {
