@@ -1,6 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var periodDates = [];
-var scrolledTitles = [];
+var extraTexts = [];
 
 var render = function() {
     console.log(data.periods);
@@ -12,10 +12,10 @@ var render = function() {
     })
 };
 
-var createElement = function (text, className, elem) {
+var createElement = function (text, className, wrapperClassName) {
     var el = document.createElement('div');
-    if (elem) {
-        el.innerHTML = '<div class="date-text">' + text + '</div>'
+    if (wrapperClassName) {
+        el.innerHTML = '<div class="' + wrapperClassName + '">' + text + '</div>'
     } else {
         el.innerText = text;
     }
@@ -33,9 +33,11 @@ var renderTitle = function (name) {
 var renderDate = function(data) {
     var el = document.createElement('div');
     var date;
+    var text;
+    var picture = createElement('', 'date-picture');
 
     date = data.date
-        ? el.appendChild(createElement(data.date, 'date', 'wrap'))
+        ? el.appendChild(createElement(data.date, 'date', 'date-text'))
         : el.appendChild(createElement('', 'date date-empty'));
 
     if (data.extraText) {
@@ -44,15 +46,25 @@ var renderDate = function(data) {
 
     el.appendChild(date);
 
-    if (data.text) {
-        el.appendChild(createElement(data.text, 'text'));
+    if (data.picture) {
+        picture.setAttribute('style', 'background-image: url("timeline/' + data.picture +'")');
+    } else {
+        picture.classList.add('dotted');
     }
+
+    if (data.text) {
+        text = createElement(data.text, 'text', 'text-wrapper');
+        text.appendChild(picture);
+        el.appendChild(text);
+    }
+
 
     el.className = data.featured ? 'date-block featured' : 'date-block';
 
     timelineBlock.appendChild(el);
 
     periodDates = document.querySelectorAll('.period-date');
+    extraTexts = document.querySelectorAll('.extra-text');
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -62,9 +74,23 @@ document.addEventListener("DOMContentLoaded", function() {
 window.addEventListener('scroll', function() {
     var windowHeight = document.body.offsetHeight;
 
-    console.log(pageYOffset);
-    console.log(document.body.offsetHeight);
-    console.log('periodDates::', periodDates);
+
+    extraTexts.forEach(function (extraText) {
+        var top = extraText.getBoundingClientRect().top;
+        if (top < 120) {
+            extraText.setAttribute('style', 'opacity:0.7');
+        }
+        if (top < 60) {
+            extraText.setAttribute('style', 'opacity:0.5');
+        }
+        if (top < 30) {
+            extraText.setAttribute('style', 'opacity:0.3');
+        }
+        if (top > 120) {
+            extraText.removeAttribute('style');
+        }
+    });
+
     periodDates.forEach(function(periodCont, i) {
         var top = periodCont.getBoundingClientRect().top;
         var nextTop;
