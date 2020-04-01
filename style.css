@@ -142,3 +142,31 @@ body {
 .featured .date-picture.dotted {
     margin-top: 28px;
 }
+
+
+#blue .timeline {
+    background-color: #1a3b54;
+    background-image: url(images/timeline-background-bw.jpg);
+    background-blend-mode: multiply;
+    color: rgb(218, 218, 218)
+}
+
+#blue .extra-text {
+    color: #a0a0a0;
+}
+
+#blue .period-date.fixed .period-title {
+    text-shadow: 0 0 20px #333;
+}
+
+#blue .date-picture.dotted {
+    border-color: #a9a9a9;
+}
+
+#blue .date-block .date {
+    border-color: rgb(218, 218, 218);
+}
+
+#blue .date-block .date:after {
+    background: rgb(218, 218, 218);
+}
