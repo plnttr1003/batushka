@@ -8,6 +8,14 @@
 
 @font-face {
     font-family: "AvenirNext";
+    src: url("fonts/AvenirNext-BoldItalic.woff2") format("woff2"),
+    url("fonts/AvenirNext-BoldItalic.woff") format("woff2");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Italic.woff2") format("woff2"),
     url("fonts/AvenirNext-Italic.woff") format("woff2");
     font-style: italic;
