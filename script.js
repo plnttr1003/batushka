@@ -1,11 +1,13 @@
 var timelineBlock = document.querySelector('.timeline-main');
+var timelineMap = document.querySelector('.timeline-map');
 var periodDates = [];
 var extraTexts = [];
+var svgIcons = [];
 
 var render = function() {
-    console.log(data.periods);
+    renderSVG();
     data.periods.forEach(function(period) {
-        renderTitle(period.name);
+        renderTitle(period.name, period.id);
         period.dates.forEach(function(data) {
             renderDate(data);
         })
@@ -23,9 +25,26 @@ var createElement = function (text, className, wrapperClassName) {
     return el;
 };
 
-var renderTitle = function (name) {
+var renderSVG = function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", 'images/map_.svg');
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            timelineMap.innerHTML = xhr.responseText;
+            svgIcons = document.querySelectorAll('.svg-icon');
+        }
+
+
+    };
+};
+
+var renderTitle = function (name, id) {
     var el = document.createElement('div');
     el.className = 'period-date';
+    if (id) {
+        el.dataset.id = id;
+    }
     el.appendChild(createElement(name, 'period-title'));
     timelineBlock.appendChild(el);
 };
@@ -97,12 +116,16 @@ window.addEventListener('scroll', function() {
         if (periodDates[i + 1]) {
             nextTop = periodDates[i + 1].getBoundingClientRect().top;
         }
-
-        console.log('TOP::', top, nextTop);
-
         if (top < 100 && top > (- nextTop)) {
             periodCont.classList.add('fixed');
-            // scrolledTitles.push(periodCont);
+            var periodContId = periodCont.dataset.id;
+            svgIcons.forEach(function(svgIcon) {
+                svgIcon.classList.remove('active-icon');
+            });
+
+            if (periodContId) {
+                document.getElementById(periodContId).classList.add('active-icon');
+            }
         } else {
             periodCont.classList.remove('fixed');
         }

@@ -1,0 +1,35 @@
+.timeline .st1 {
+    fill: rgba(175, 174, 174, 0.5);
+    stroke-width: 8px;
+}
+
+.timeline .st0 {
+    stroke: rgba(195, 195, 195, 0.5);
+    stroke-width: 2px;
+}
+
+.timeline .st2 {
+    stroke: rgba(179, 179, 179, 0.5);
+    stroke-width: 4px;
+}
+
+.timeline .st3 {
+    fill: #f8f6f1;
+}
+
+.timeline .st4 {
+    fill: rgba(82, 40, 16, 0.7);
+    transition: stroke ease 1.4s;
+}
+
+g#icos g:hover .st4 {
+    fill: #522810;
+    stroke: #522810;
+    stroke-width: 1px;
+}
+
+.active-icon .st4 {
+    fill: #522810;
+    stroke: #522810;
+    stroke-width: 1px;
+}

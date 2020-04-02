@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Batushka";
     src: url("fonts/Batushka.woff2") format("woff2"),
-    url("fonts/Batushka.woff") format("woff2");
+    url("fonts/Batushka.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-BoldItalic.woff2") format("woff2"),
-    url("fonts/AvenirNext-BoldItalic.woff") format("woff2");
+    url("fonts/AvenirNext-BoldItalic.woff") format("woff");
     font-style: italic;
     font-weight: bold;
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Italic.woff2") format("woff2"),
-    url("fonts/AvenirNext-Italic.woff") format("woff2");
+    url("fonts/AvenirNext-Italic.woff") format("woff");
     font-style: italic;
     font-weight: normal;
 }
@@ -25,7 +25,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Bold.woff2") format("woff2"),
-    url("fonts/AvenirNext-Bold.woff") format("woff2");
+    url("fonts/AvenirNext-Bold.woff") format("woff");
     font-style: normal;
     font-weight: bold;
 }
@@ -33,7 +33,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Bold.woff2") format("woff2"),
-    url("fonts/AvenirNext-Bold.woff") format("woff2");
+    url("fonts/AvenirNext-Bold.woff") format("woff");
     font-style: normal;
     font-weight: bold;
 }
@@ -41,7 +41,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Medium.woff2") format("woff2"),
-    url("fonts/AvenirNext-Medium.woff") format("woff2");
+    url("fonts/AvenirNext-Medium.woff") format("woff");
     font-style: normal;
     font-weight: 500;
 }
@@ -49,7 +49,7 @@
 @font-face {
     font-family: "AvenirNext";
     src: url("fonts/AvenirNext-Regular.woff2") format("woff2"),
-    url("fonts/AvenirNext-Regular.woff") format("woff2");
+    url("fonts/AvenirNext-Regular.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
