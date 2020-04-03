@@ -152,11 +152,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     mask: url(images/mask.png);
-    mask-size: 70% auto;
+    mask-size: 72% auto;
     mask-repeat: no-repeat;
     mask-position: 100% 0;
     -webkit-mask: url(images/mask.png);
-    -webkit-mask-size: 81% 100%;
+    -webkit-mask-size: 72% 100%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: 100% 0;
     display: flex;
