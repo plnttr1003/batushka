@@ -166,13 +166,18 @@ body {
 .timeline-cite-text {
     width: calc(70vw - 95px);
     padding: 40px 20px 40px 40px;
-    /* font-weight: bold; */
     font-style: italic;
     position: relative;
     color: #565555;
     background: url(images/cite-gray.svg) 0 41px no-repeat;
     background-size: 24px;
+    font-family: 'Batushka', Times, serif;
+    font-size: 25px;
+    line-height: 26px;
 }
+
+.timeline-cite-span {
+    max-width: 700px;
 }
 
 .extra-text, .date-text, .text {

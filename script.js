@@ -3,7 +3,7 @@ var timelineMap = document.querySelector('.timeline-map');
 var periodDates = [];
 var extraTexts = [];
 var svgIcons = [];
-var citeBlock = document.querySelector('.timeline-cite-text');
+var citeBlock = document.querySelector('.timeline-cite-span');
 
 var render = function() {
     renderSVG();
