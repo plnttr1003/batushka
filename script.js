@@ -11,7 +11,7 @@ var render = function() {
         period.dates.forEach(function(data) {
             renderDate(data);
         })
-    })
+    });
 };
 
 var createElement = function (text, className, wrapperClassName) {
@@ -27,15 +27,14 @@ var createElement = function (text, className, wrapperClassName) {
 
 var renderSVG = function () {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", 'images/map2_.svg');
+    xhr.open("GET", 'images/map_.svg');
     xhr.send();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             timelineMap.innerHTML = xhr.responseText;
             svgIcons = document.querySelectorAll('.svg-icon');
+            timelineMap.style.display = 'flex';
         }
-
-
     };
 };
 
@@ -87,8 +86,14 @@ var renderDate = function(data) {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.scrollTop = 0;
     render();
+    lightbox.option({
+        'resizeDuration': 0,
+        'wrapAround': true,
+        'fitImagesInViewport': true,
+        'imageFadeDuration': 100,
+        'showImageNumberLabel': false
+    });
 });
 
 window.addEventListener('scroll', function() {
