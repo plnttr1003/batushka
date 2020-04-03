@@ -1,13 +1,12 @@
 .intro {
     height: 100vh;
     width: 100%;
-    background: #30756D;
     color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: url(images/background.jpg) 50% no-repeat;
+    background: #30756D url(images/background.jpg) 50% no-repeat;
     background-size: cover;
     position: relative;
     overflow: hidden;
