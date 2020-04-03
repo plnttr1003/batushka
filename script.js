@@ -3,9 +3,13 @@ var timelineMap = document.querySelector('.timeline-map');
 var periodDates = [];
 var extraTexts = [];
 var svgIcons = [];
+var citeBlock = document.querySelector('.timeline-cite-text');
 
 var render = function() {
     renderSVG();
+    renderCite();
+    setInterval(renderCite, 5000);
+
     data.periods.forEach(function(period) {
         renderTitle(period.name, period.id);
         period.dates.forEach(function(data) {
@@ -38,6 +42,12 @@ var renderSVG = function () {
     };
 };
 
+var getRandomInt = function(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+};
+
 var renderTitle = function (name, id) {
     var el = document.createElement('div');
     el.className = 'period-date';
@@ -46,6 +56,11 @@ var renderTitle = function (name, id) {
     }
     el.appendChild(createElement(name, 'period-title'));
     timelineBlock.appendChild(el);
+};
+
+var renderCite = function () {
+    console.log('citeBlock::', citeBlock);
+    citeBlock.innerText = data.citates[getRandomInt(0, data.citates.length)]
 };
 
 var renderDate = function(data) {
@@ -76,11 +91,8 @@ var renderDate = function(data) {
         el.appendChild(text);
     }
 
-
     el.className = data.featured ? 'date-block featured' : 'date-block';
-
     timelineBlock.appendChild(el);
-
     periodDates = document.querySelectorAll('.period-date');
     extraTexts = document.querySelectorAll('.extra-text');
 };
@@ -98,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.addEventListener('scroll', function() {
     var windowHeight = document.body.offsetHeight;
-
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
