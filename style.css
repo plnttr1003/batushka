@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 html,
@@ -168,7 +169,6 @@ body {
     padding: 26px 20px 60px 60px;
     font-style: italic;
     position: relative;
-    color: #565555;
     background: url(images/cite-gray.svg) 25px 14px no-repeat;
     background-size: 17px;
     font-family: 'Batushka', Times, serif;
@@ -217,25 +217,33 @@ body {
     margin-top: 28px;
 }
 
-.empty {
+.block {
     height: 100vh;
     display: flex;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(images/timeline-background.jpg);
     justify-content: center;
     align-items: center;
     position: relative;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 40%;
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
     z-index: 5;
 }
 
-.empty.letters,
-.empty.books {
+.block.letters,
+.block.books {
     background-image: linear-gradient(180deg, rgba(218, 218, 218, 0.7) 0%, rgba(218, 218, 218, 0.7) 100%), url(images/timeline-background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 40%;
+}
+
+.block.video {
+    background: #000;
+}
+
+.block video {
+    width: 100%;
+    height: 100vh;
 }
 
 #blue:target .timeline {
