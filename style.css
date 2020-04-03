@@ -164,6 +164,25 @@ body {
     margin-top: 28px;
 }
 
+.empty {
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(images/timeline-background.jpg);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 40%;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.empty.letters,
+.empty.books {
+    background-image: linear-gradient(180deg, rgba(218, 218, 218, 0.7) 0%, rgba(218, 218, 218, 0.7) 100%), url(images/timeline-background.jpg);
+}
 
 #blue:target .timeline {
     background-color: #1a3b54;
