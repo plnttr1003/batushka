@@ -8,7 +8,7 @@ var citeBlock = document.querySelector('.timeline-cite-span');
 var render = function() {
     renderSVG();
     renderCite();
-    setInterval(renderCite, 5000);
+    setInterval(renderCite, 15000);
 
     data.periods.forEach(function(period) {
         renderTitle(period.name, period.id);
