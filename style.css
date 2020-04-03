@@ -134,7 +134,7 @@ body {
 }
 
 .timeline-main {
-    z-index: 1;
+    z-index: 4;
     position: relative;
     pointer-events: none;
 }
@@ -145,7 +145,7 @@ body {
     right: 0;
     left: 0;
     /* height: 100px; */
-    z-index: 2;
+    z-index: 5;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(images/timeline-background.jpg);
     background-position: 40%;
     background-attachment: fixed;
@@ -188,6 +188,15 @@ body {
     border-radius: 100%;
     transform: translate(0, -12px);
     order: -1;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+    pointer-events: all;
+    transition: transform 0.2s ease;
+}
+
+.date-picture:hover {
+    transform: scale(1.2) translate(0, -10px);
 }
 
 .date-picture.dotted {
