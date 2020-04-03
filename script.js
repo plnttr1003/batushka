@@ -27,7 +27,7 @@ var createElement = function (text, className, wrapperClassName) {
 
 var renderSVG = function () {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", 'images/map_.svg');
+    xhr.open("GET", 'images/map2_.svg');
     xhr.send();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
