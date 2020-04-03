@@ -164,20 +164,22 @@ body {
 }
 
 .timeline-cite-text {
-    width: calc(70vw - 95px);
-    padding: 40px 20px 40px 40px;
+    width: calc(70vw - 154px);
+    padding: 37px 20px 40px 60px;
     font-style: italic;
     position: relative;
     color: #565555;
-    background: url(images/cite-gray.svg) 0 41px no-repeat;
-    background-size: 24px;
+    background: url(images/cite-gray.svg) 25px 23px no-repeat;
+    background-size: 17px;
     font-family: 'Batushka', Times, serif;
     font-size: 25px;
     line-height: 26px;
+    color: black;
+    display: flex;
 }
 
 .timeline-cite-span {
-    max-width: 700px;
+    max-width: 940px;
 }
 
 .extra-text, .date-text, .text {
@@ -228,6 +230,7 @@ body {
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
+    z-index: 5;
 }
 
 .empty.letters,
