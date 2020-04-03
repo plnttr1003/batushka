@@ -18,7 +18,7 @@
 }
 
 .timeline .st4 {
-    fill: rgba(82, 40, 16, 0.7);
+    fill: rgba(82, 40, 16, 0.6);
     transition: stroke ease 1.4s;
     stroke-width: 1px;
     stroke: transparent;
@@ -30,6 +30,6 @@ g#icos g:hover .st4 {
 }
 
 .active-icon .st4 {
-    fill: #522810;
-    stroke: #000;
+    fill: rgba(82, 40, 16, 0.9);
+    stroke: rgba(0, 0, 0, 0.45);
 }

@@ -87,6 +87,7 @@ var renderDate = function(data) {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    document.scrollTop = 0;
     render();
 });
 

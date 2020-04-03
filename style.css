@@ -109,6 +109,7 @@ body {
     font-size: 15px;
     line-height: 20px;
     display: flex;
+    text-shadow: 0 0 5px #fff;
 }
 
 .timeline .date-block.featured .text {
