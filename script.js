@@ -1,6 +1,7 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map');
 var periodDates = [];
+var dateTexts = [];
 var extraTexts = [];
 var svgIcons = [];
 var citeBlock = document.querySelector('.timeline-cite-span');
@@ -93,6 +94,7 @@ var renderDate = function(data) {
 
     el.className = data.featured ? 'date-block featured' : 'date-block';
     timelineBlock.appendChild(el);
+    dateBlocks = document.querySelectorAll('.date-block');
     periodDates = document.querySelectorAll('.period-date');
     extraTexts = document.querySelectorAll('.extra-text');
 };
@@ -145,6 +147,15 @@ window.addEventListener('scroll', function() {
             }
         } else {
             periodCont.classList.remove('fixed');
+        }
+    });
+
+    dateBlocks.forEach(function(dataBlock) {
+        var top = dataBlock.getBoundingClientRect().top;
+        if (top < 150) {
+            dataBlock.classList.add('date-block-hidden');
+        } else {
+            dataBlock.classList.remove('date-block-hidden');
         }
     })
 });

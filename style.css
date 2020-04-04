@@ -53,6 +53,16 @@ body {
     display: flex;
 }
 
+.timeline .date-block .date .date-text,
+.timeline .date-block .text {
+    transition: opacity 0.2s ease;
+}
+
+.timeline .date-block.date-block-hidden .date .date-text,
+.timeline .date-block.date-block-hidden .text {
+    opacity: 0;
+}
+
 .timeline .date-block .extra-text {
     max-width: 18vw;
     margin-left: 20px;
@@ -145,7 +155,6 @@ body {
     top: 0;
     right: 0;
     left: 0;
-    /* height: 100px; */
     z-index: 5;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(images/timeline-background.jpg);
     background-position: 40%;
