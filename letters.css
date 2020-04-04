@@ -1,0 +1,237 @@
+.letters {
+    background-image: linear-gradient(180deg, rgba(191, 180, 153, 0.7) 10%, rgba(191, 180, 153, 0.7) 50%), url(images/timeline-background.jpg);
+    background-attachment: scroll, fixed;
+    background-size: cover;
+    background-position: 40%;
+    overflow: hidden;
+    min-height: 486px;
+}
+
+.letters-background,
+.letters-foreground
+{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.letters-background {
+    background: url(images/letters-trees.jpg) 50% no-repeat;
+    background-size: cover;
+    mask: url(images/letters-trees-mask.png);
+    mask-size: 100% 50%;
+    mask-repeat: no-repeat;
+    mask-position: 0 100%;
+    -webkit-mask: url(images/letters-trees-mask.png);
+    -webkit-mask-size: 100% 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 0 100%;
+}
+
+.letters-foreground {
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(131, 123, 115, 0.46) 66%, #000000db 95%);
+}
+
+.letters-container {
+    display: flex;
+    max-width: 310px;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-height: 100%;
+}
+
+@media (min-width: 520px) {
+    .letters-container {
+        max-width: 520px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-container {
+        max-width: 1110px;
+    }
+}
+
+
+.letters-title {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #292929;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}
+
+.letters-title span {
+    white-space: nowrap;
+}
+
+@media (min-width: 520px) {
+    .letters-title {
+        font-size: 29px;
+        line-height: 46px;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-title {
+        margin-top: 70px;
+    }
+}
+
+.letters-content {
+    margin-top: 24px;
+    position: relative;
+}
+
+@media (min-width: 520px) {
+    .letters-content {
+        margin-top: 16px;
+    }
+}
+
+.letters-circles {
+}
+
+.letters-circle {
+    width: 246px;
+    height: 246px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+@media (min-width: 520px) {
+    .letters-circle {
+        width: 362px;
+        height: 362px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-circle {
+        width: 633px;
+        height: 633px;
+    }
+}
+
+
+.letters-back-circle {
+    background: rgba(196, 196, 196, 0.4);
+    right: -54px;
+    top: -49px;
+}
+
+@media (min-width: 520px) {
+    .letters-back-circle {
+        background: rgba(196, 196, 196, 0.4);
+        right: -97px;
+        top: -59px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-back-circle {
+        right: 26px;
+        top: -115px;
+    }
+}
+
+.letters-front-circle {
+    right: -63px;
+    top: -42px;
+    background: url(images/letters-img.jpg) 50% no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 520px) {
+    .letters-front-circle {
+        right: -113px;
+        top: -32px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-front-circle {
+        right: 0;
+        top: -75px;
+    }
+}
+
+
+.letters-text {
+    font-weight: 500;
+    font-size: 6px;
+    line-height: 8px;
+    width: 145px;
+    margin-left: -15px;
+    padding: 15px 15px 20px;
+    background: rgba(212, 209, 120, 0.6);
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 520px) {
+    .letters-text {
+        margin-left: -24px;
+        padding: 24px 24px 40px;
+        width: 303px;
+        font-size: 13px;
+        line-height: 13px;
+        letter-spacing: 0.03em;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-text {
+        margin-left: -35px;
+        padding: 35px 35px 65px;
+        font-size: 16px;
+        line-height: 16px;
+        width: 393px;
+        color: #292929;
+        /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+    }
+}
+
+.letters-letters {
+    width: 301px;
+    height: 171px;
+    background: url(images/letters-letters.jpg) 50% 0 no-repeat;
+    background-size: cover;
+    margin-top: -17px;
+    position: relative;
+    z-index: 1;
+    mask: url(images/letters-letters-mask.png);
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: 50% 0;
+    -webkit-mask: url(images/letters-letters-mask.png);
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 50% 0;
+}
+
+@media (min-width: 520px) {
+    .letters-letters {
+        width: 678px;
+        height: 390px;
+        margin-top: -34px;
+        margin-left: -60px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .letters-letters {
+        width: 742px;
+        height: 426px;
+        margin-top: -130px;
+        margin-left: 250px;
+    }
+}

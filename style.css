@@ -242,7 +242,6 @@ body {
     z-index: 5;
 }
 
-.block.letters,
 .block.books {
     background-image: linear-gradient(180deg, rgba(218, 218, 218, 0.7) 0%, rgba(218, 218, 218, 0.7) 100%), url(images/timeline-background.jpg);
     background-attachment: fixed;
