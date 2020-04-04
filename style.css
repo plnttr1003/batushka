@@ -9,14 +9,15 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Avenir Next', Arial, sans-serif;
+    background-image: url(images/timeline-background.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%);
+    background-position: 40%;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .timeline {
     padding-top: 90px;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(images/timeline-background.jpg);
-    background-position: 40%;
-    background-attachment: fixed;
-    background-size: cover;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%);
     position: relative;
 }
 
@@ -242,8 +243,12 @@ body {
     z-index: 5;
 }
 
+.half-block {
+    height: 25vh;
+}
+
 .block.books {
-    background-image: linear-gradient(180deg, rgba(218, 218, 218, 0.7) 0%, rgba(218, 218, 218, 0.7) 100%), url(images/timeline-background.jpg);
+    background-image: linear-gradient(180deg, rgba(218, 218, 218, 0.7) 0%, rgba(218, 218, 218, 0.7) 100%);
     background-attachment: fixed;
     background-size: cover;
     background-position: 40%;

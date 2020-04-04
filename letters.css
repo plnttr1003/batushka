@@ -1,3 +1,23 @@
+.pre-letters {
+    position: relative;
+}
+
+.pre-letters-mask {
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(191, 180, 153, 0.7) 10%, rgba(191, 180, 153, 0.7) 50%), url(images/timeline-background.jpg);
+    background-attachment: scroll, fixed;
+    background-size: cover;
+    background-position: 40%;
+    mask: url(images/letters-trees-mask.png);
+    mask-size: 100% 50%;
+    mask-repeat: no-repeat;
+    mask-position: 0 100%;
+    -webkit-mask: url(images/letters-trees-mask.png);
+    -webkit-mask-size: 100% 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 0 100%;
+}
+
 .letters {
     background-image: linear-gradient(180deg, rgba(191, 180, 153, 0.7) 10%, rgba(191, 180, 153, 0.7) 50%), url(images/timeline-background.jpg);
     background-attachment: scroll, fixed;
