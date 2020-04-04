@@ -21,7 +21,7 @@ data = {
                 text: 'священник Николай Азбукин совершил Таинство Крещения',
                 extraText: '',
                 picture: '15.jpg',
-                featured: true,
+                featured: false,
             },
             {
                 date: null,
