@@ -104,6 +104,10 @@ body {
     top: -2px;
 }
 
+.timeline .date-block .date-empty {
+    flex-direction: row;
+}
+
 .timeline .date-block .date-empty:after {
     display: none;
 }
