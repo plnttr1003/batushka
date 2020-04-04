@@ -5,6 +5,7 @@ var dateTexts = [];
 var extraTexts = [];
 var svgIcons = [];
 var citeBlock = document.querySelector('.timeline-cite-span');
+var timelineCite = document.querySelector('.timeline-cite');
 
 var render = function() {
     renderSVG();
@@ -112,6 +113,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.addEventListener('scroll', function() {
     var windowHeight = document.body.offsetHeight;
+
+    if (timelineBlock.getBoundingClientRect().bottom < 0) {
+        timelineCite.style.display = 'none';
+    }  else {
+        timelineCite.style.display = 'flex';
+    }
+
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
