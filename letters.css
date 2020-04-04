@@ -7,6 +7,18 @@
     min-height: 486px;
 }
 
+@media (min-width: 520px) {
+    .letters {
+        min-height: 626px;
+    }
+}
+
+@media (min-width: 520px) {
+    .letters {
+        min-height: 726px;
+    }
+}
+
 .letters-background,
 .letters-foreground
 {
@@ -183,7 +195,7 @@
         padding: 24px 24px 40px;
         width: 303px;
         font-size: 13px;
-        line-height: 13px;
+        line-height: 14px;
         letter-spacing: 0.03em;
     }
 }
@@ -192,8 +204,8 @@
     .letters-text {
         margin-left: -35px;
         padding: 35px 35px 65px;
-        font-size: 16px;
-        line-height: 16px;
+        font-size: 15px;
+        line-height: 17px;
         width: 393px;
         color: #292929;
         /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
