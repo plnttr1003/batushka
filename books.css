@@ -1,0 +1,41 @@
+.block.books {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(images/timeline-background.jpg);
+    background-position: 40%;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.books-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.book-picture {
+    height: 300px;
+    width: auto;
+    order: -1;
+    filter: sepia(0.4) grayscale(0.2);
+    box-shadow: 0 0 10px #000;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.book-name {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.book-item:hover .book-picture {
+    transform: scale(1.1);
+    transform-origin: 50%;
+    filter: none;
+}

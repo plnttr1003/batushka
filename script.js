@@ -6,10 +6,12 @@ var extraTexts = [];
 var svgIcons = [];
 var citeBlock = document.querySelector('.timeline-cite-span');
 var timelineCite = document.querySelector('.timeline-cite');
+var booksContent = document.querySelector('.books-content');
 
 var render = function() {
     renderSVG();
     renderCite();
+    renderBooks();
     setInterval(renderCite, 15000);
 
     data.periods.forEach(function(period) {
@@ -20,13 +22,20 @@ var render = function() {
     });
 };
 
-var createElement = function (text, className, wrapperClassName) {
+var createElement = function(text, className, wrapperClassName) {
     var el = document.createElement('div');
     if (wrapperClassName) {
         el.innerHTML = '<div class="' + wrapperClassName + '">' + text + '</div>'
     } else {
         el.innerText = text;
     }
+    el.className = className;
+    return el;
+};
+
+var createImg = function(src, className) {
+    var el = document.createElement('img');
+    el.setAttribute('src', 'books/' + src);
     el.className = className;
     return el;
 };
@@ -98,6 +107,15 @@ var renderDate = function(data) {
     dateBlocks = document.querySelectorAll('.date-block');
     periodDates = document.querySelectorAll('.period-date');
     extraTexts = document.querySelectorAll('.extra-text');
+};
+
+var renderBooks = function() {
+    data.books.forEach(function(book) {
+        var bookImg = createImg(book.picture, 'book-picture');
+        var bookItem = createElement(book.name || '', 'book-item', 'book-name');
+        bookItem.appendChild(bookImg);
+        booksContent.appendChild(bookItem);
+    })
 };
 
 document.addEventListener("DOMContentLoaded", function() {
