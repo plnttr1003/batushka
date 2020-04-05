@@ -74,7 +74,19 @@
     left: 5px;
 }
 
+@media (min-width: 520px) {
+    .books-arrow-left {
+        left: 15px;
+    }
+}
+
 .books-arrow-right {
     right: 5px;
     transform: rotate(180deg);
+}
+
+@media (min-width: 520px) {
+    .books-arrow-right {
+        right: 15px;
+    }
 }
