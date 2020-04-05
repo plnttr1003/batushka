@@ -31,14 +31,19 @@ var render = function() {
     });
 };
 
-var createElement = function(text, className, wrapperClassName) {
-    var el = document.createElement('div');
+var createElement = function(text, className, wrapperClassName, params) {
+    var el = document.createElement(params && params.type || 'div');
     if (wrapperClassName) {
         el.innerHTML = '<div class="' + wrapperClassName + '">' + text + '</div>'
     } else {
         el.innerText = text;
     }
     el.className = className;
+    if (params && params.attrs) {
+        params.attrs.forEach(function(attr) {
+            el.setAttribute(attr[0], attr[1]);
+        })
+    }
     return el;
 };
 
@@ -120,7 +125,7 @@ var renderDate = function(data) {
 var renderBooks = function() {
     data.books.forEach(function(book) {
         var bookImg = createImg(book.picture, 'book-picture');
-        var bookItem = createElement(book.name || '', 'book-item', 'book-name');
+        var bookItem = createElement(book.name || '', 'book-item', 'book-name', {type: 'a', attrs: [['href', book.link], ['target', '_blank']]});
         bookItem.appendChild(bookImg);
         booksContent.appendChild(bookItem);
         bookItems.push(bookItem);
