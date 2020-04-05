@@ -1,17 +1,26 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map');
-var periodDates = [];
-var dateTexts = [];
-var extraTexts = [];
-var svgIcons = [];
 var citeBlock = document.querySelector('.timeline-cite-span');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
+var bookRightArrow = document.querySelector('.books-arrow-right');
+var bookLeftArrow = document.querySelector('.books-arrow-left');
+
+var periodDates = [];
+var extraTexts = [];
+var svgIcons = [];
+var bookItems = [];
+var shownBooks = {
+    start: 0,
+    end: 0,
+    bookCount: 0
+};
 
 var render = function() {
     renderSVG();
     renderCite();
     renderBooks();
+    calcBooksContainer();
     setInterval(renderCite, 15000);
 
     data.periods.forEach(function(period) {
@@ -70,7 +79,6 @@ var renderTitle = function (name, id) {
 };
 
 var renderCite = function () {
-    console.log('citeBlock::', citeBlock);
     citeBlock.innerText = data.citates[getRandomInt(0, data.citates.length)]
 };
 
@@ -115,11 +123,62 @@ var renderBooks = function() {
         var bookItem = createElement(book.name || '', 'book-item', 'book-name');
         bookItem.appendChild(bookImg);
         booksContent.appendChild(bookItem);
+        bookItems.push(bookItem);
+    });
+};
+
+var calcBooksContainer = function() {
+    var documentSize = document.body.offsetWidth;
+    var bookCount = Math.floor(documentSize / 280);
+
+    shownBooks.bookCount = bookCount;
+    shownBooks.start = 0;
+    shownBooks.end = bookCount;
+    bookLeftArrow.style.opacity = 0.5;
+    showAndHideBooks();
+};
+
+var showAndHideBooks = function() {
+    bookItems.forEach(function(bookItem, i) {
+        if (i >= shownBooks.start && i < shownBooks.end) {
+            bookItem.classList.remove('book-hidden');
+            bookItem.classList.add('book-visible');
+        } else {
+            bookItem.classList.add('book-hidden');
+            bookItem.classList.remove('book-visible');
+        }
     })
+};
+
+var scrollBooks = function() {
+    bookRightArrow.addEventListener('click', function () {
+        if (shownBooks.start < bookItems.length - shownBooks.bookCount) {
+            shownBooks.start += 1;
+            shownBooks.end += 1;
+            showAndHideBooks();
+            bookLeftArrow.removeAttribute('style');
+            if (shownBooks.start === bookItems.length - shownBooks.bookCount) {
+                bookRightArrow.style.opacity = 0.5;
+            }
+        }
+
+    });
+    bookLeftArrow.addEventListener('click', function () {
+        if (shownBooks.end > shownBooks.bookCount) {
+            shownBooks.start -= 1;
+            shownBooks.end -= 1;
+            showAndHideBooks();
+            bookRightArrow.removeAttribute('style');
+            if (shownBooks.end === shownBooks.bookCount) {
+                bookLeftArrow.style.opacity = 0.5;
+            }
+        }
+    });
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     render();
+    scrollBooks();
     lightbox.option({
         'resizeDuration': 0,
         'wrapAround': true,
@@ -129,18 +188,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-window.addEventListener('scroll', function() {
-    var windowHeight = document.body.offsetHeight;
+window.addEventListener('resize', function () {
+    calcBooksContainer();
+});
 
+window.addEventListener('scroll', function() {
     if (timelineBlock.getBoundingClientRect().bottom < 0) {
         timelineCite.style.display = 'none';
     }  else {
         timelineCite.style.display = 'flex';
     }
 
-
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
+
         if (top < 120) {
             extraText.setAttribute('style', 'opacity:0.7');
         }
@@ -158,12 +219,14 @@ window.addEventListener('scroll', function() {
     periodDates.forEach(function(periodCont, i) {
         var top = periodCont.getBoundingClientRect().top;
         var nextTop;
+
         if (periodDates[i + 1]) {
             nextTop = periodDates[i + 1].getBoundingClientRect().top;
         }
         if (top < 100 && top > (- nextTop)) {
             periodCont.classList.add('fixed');
             var periodContId = periodCont.dataset.id;
+
             svgIcons.forEach(function(svgIcon) {
                 svgIcon.classList.remove('active-icon');
             });
@@ -178,6 +241,7 @@ window.addEventListener('scroll', function() {
 
     dateBlocks.forEach(function(dataBlock) {
         var top = dataBlock.getBoundingClientRect().top;
+
         if (top < 150) {
             dataBlock.classList.add('date-block-hidden');
         } else {
