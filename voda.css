@@ -1,27 +1,47 @@
-.timeline .st1 {
-    fill: rgba(175, 174, 174, 0.5);
+.timeline-map-background .st1,
+.timeline-map-background .st0 {
+    stroke: rgba(195, 195, 195, 0.5);
+    stroke-width: 2px;
+    fill: none;
+}
+
+.timeline-map-background .st3 {
+    stroke: rgba(195, 195, 195, 0.8);
+    stroke-width: 2px;
+    opacity: 1;
+    fill: none;
+}
+
+.timeline-map-background .st4 {
+    transition: stroke ease 1.4s;
+    stroke-width: 4px;
+    stroke: rgba(64, 64, 64, 0.4);
+    fill: none;
+}
+
+.timeline-map-background .st6,
+.timeline-map-background .st7 {
+    stroke: rgba(175, 174, 174, 0.4);
     stroke-width: 8px;
 }
 
-.timeline .st0 {
-    stroke: rgba(195, 195, 195, 0.5);
-    stroke-width: 2px;
+.timeline-map-background .st6,
+.timeline-map-background .st7 {
+    stroke: rgba(175, 174, 174, 0.4);
+    stroke-width: 8px;
+    fill: none;
 }
 
-.timeline .st2 {
+.timeline-map-background .st2 {
     stroke: rgba(179, 179, 179, 0.5);
     stroke-width: 4px;
+    fill: none;
 }
 
-.timeline .st3 {
-    fill: transparent;
-}
-
-.timeline .st4 {
-    fill: rgba(82, 40, 16, 0.6);
-    transition: stroke ease 1.4s;
-    stroke-width: 1px;
-    stroke: transparent;
+.timeline-map-background .st9,
+.timeline-map-background .st10
+{
+    fill: rgba(119, 119, 119, 0.25);
 }
 
 g#icos g:hover .st4 {
@@ -32,4 +52,12 @@ g#icos g:hover .st4 {
 .active-icon .st4 {
     fill: rgba(82, 40, 16, 0.9);
     stroke: rgba(0, 0, 0, 0.45);
+}
+
+
+.timeline-map-icons .st0 {
+    fill: rgba(82, 40, 16, 0.6);
+    transition: stroke ease 1.4s;
+    stroke-width: 1px;
+    stroke: rgba(82, 40, 16, 0.6);
 }

@@ -1,5 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
-var timelineMap = document.querySelector('.timeline-map');
+var timelineMap = document.querySelector('.timeline-map-background');
+var timelineMapIcons = document.querySelector('.timeline-map-icons');
 var citeBlock = document.querySelector('.timeline-cite-span');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
@@ -17,7 +18,8 @@ var shownBooks = {
 };
 
 var render = function() {
-    renderSVG();
+    renderSVG({file: 'map.svg', container: timelineMap});
+    renderSVG({file: 'icons.svg', container: timelineMapIcons});
     renderCite();
     renderBooks();
     calcBooksContainer();
@@ -54,15 +56,15 @@ var createImg = function(src, className) {
     return el;
 };
 
-var renderSVG = function () {
+var renderSVG = function(params) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", 'images/map_.svg');
+    xhr.open("GET", 'svg/' + params.file);
     xhr.send();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            timelineMap.innerHTML = xhr.responseText;
+            params.container.innerHTML = xhr.responseText;
             svgIcons = document.querySelectorAll('.svg-icon');
-            timelineMap.style.display = 'flex';
+            params.container.style.display = 'flex';
         }
     };
 };
