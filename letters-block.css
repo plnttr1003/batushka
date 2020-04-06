@@ -13,7 +13,9 @@
 
 .letter-column {
     width: 20%;
-    margin: 0 0.5vw 1vw;
+    margin: 40px 1.2vw;
+    background: rgba(212, 209, 120, 0.23);
+    padding: 0 10px;
 }
 
 .letter-column a {
@@ -23,9 +25,22 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-size: 0;
     line-height: 0;
+    transition: filter 0.2s ease;
+}
+
+.letter-column a:hover {
+    filter: none;
 }
 
 .letter-column img {
     width: 100%;
     height: auto;
+}
+
+.letter-column-name {
+    font-size: 17px;
+    line-height: 17px;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    height: 55px;
 }
