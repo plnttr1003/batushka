@@ -1,6 +1,8 @@
 data = {
+    baseViewBox: '-50 600 1100 634.1',
     periods: [{
         name: 'Детство',
+        viewbox: '-50 600 1100 634.1',
         dates: [
             {
                 date: '1910',
@@ -18,12 +20,7 @@ data = {
                 icon: {
                     id: 'orel',
                     svg: 'orel/orel.svg',
-                    position: {
-                        top: 319,
-                        left: 240,
-                        width: 28,
-                        height: 36
-                    },
+                    style: 'transform: translate(683px, 906px) scale(0.136);',
                     poster: 'poster/orel.jpg'
                 }
             },
@@ -92,12 +89,7 @@ data = {
                 icon: {
                     id: 'spas-chekriak',
                     svg: 'orel/spas-chekriak.svg',
-                    position: {
-                        left: 238,
-                        top: 301,
-                        width: 24,
-                        height: 19
-                    },
+                    style: 'transform: translate(677px, 854px) scale(0.08);',
                     poster: 'poster/orel.jpg'
                 }
             },
@@ -169,6 +161,7 @@ data = {
     {
         name: 'Москва',
         id: 'moscow',
+        viewbox: '100 350 1004.7 800.1',
         dates: [
             {
                 date: '1932',
@@ -240,6 +233,12 @@ data = {
                 extraText: '',
                 picture: '19.jpg',
                 featured: false,
+                icon: {
+                    id: 'vagankovo',
+                    svg: 'moscow/vagankovo.svg',
+                    style: 'transform: translate(651px, 673px) scale(0.09);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
@@ -268,6 +267,12 @@ data = {
                 extraText: '',
                 picture: '22.jpg',
                 featured: false,
+                icon: {
+                    id: 'izmaylovo',
+                    svg: 'moscow/izmaylovo.svg',
+                    style: 'transform: translate(743px, 637px) scale(0.10);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: '1947',
@@ -294,6 +299,7 @@ data = {
     },
     {
         name: 'В заключении',
+        viewbox: '200 -300 1004.7 800.1',
         dates: [
             {
                 date: '1950',
@@ -315,6 +321,12 @@ data = {
                 extraText: '',
                 picture: '',
                 featured: false,
+                icon: {
+                    id: 'kargopol',
+                    svg: 'kargopol/kargopol.svg',
+                    style: 'transform: translate(887px, 106px) scale(0.13);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: '1951',
@@ -362,6 +374,7 @@ data = {
     },
     {
         name: 'Псков',
+        viewbox: '-150 100 804.7 700.1',
         id: 'pskov',
         dates: [
             {
@@ -370,6 +383,12 @@ data = {
                 extraText: 'Освободившись из лагеря, отец Иоанн, как и все бывшие заключенные, был «лишенцем». «Лишенцам» запрещалось проживать в больших городах и вблизи границы Советского Союза.',
                 picture: '',
                 featured: true,
+                icon: {
+                    id: 'pskovo-pechorskiy',
+                    svg: 'pskov/pskovo-pechorskiy.svg',
+                    style: 'transform: translate(334px, 464px) scale(0.10);}',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
@@ -377,6 +396,12 @@ data = {
                 extraText: '',
                 picture: '7.jpg',
                 featured: false,
+                icon: {
+                    id: 'pskov',
+                    svg: 'pskov/pskov.svg',
+                    style: 'transform: translate(421px, 526px) scale(0.12);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
@@ -396,6 +421,7 @@ data = {
     },
     {
         name: 'На Рязанской земле',
+        viewbox: '260 400 904.7 700.1',
         dates: [
             {
                 date: '1957',
@@ -403,6 +429,12 @@ data = {
                 extraText: 'Избегая повторного ареста, отец Иоанн уехал в Рязанскую епархию, где ему предстояло скитаться по разным приходам в течение 10 лет. За это время батюшка возродил 5 храмов.',
                 picture: '',
                 featured: true,
+                icon: {
+                    id: 'yasakovo',
+                    svg: 'ryazan/yasakovo.svg',
+                    style: 'transform: translate(905px, 776px) scale(0.11);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
@@ -424,6 +456,12 @@ data = {
                 extraText: '',
                 picture: false,
                 featured: false,
+                icon: {
+                    id: 'letovo',
+                    svg: 'ryazan/letovo.svg',
+                    style: 'transform: translate(815px, 728px) scale(0.10);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: '1960',
@@ -471,6 +509,7 @@ data = {
     },
     {
         name: 'Постриг в Сухуми',
+        viewbox: '800 1100 800 1100.1',
         id: 'sukhumi',
         dates: [
             {
@@ -486,6 +525,12 @@ data = {
                 extraText: '',
                 picture: '',
                 featured: true,
+                icon: {
+                    id: 'sukhumi',
+                    svg: 'sukhumi/sukhumi.svg',
+                    style: 'transform: translate(879px, 1594px) scale(0.10);',
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: '1967',
@@ -499,6 +544,7 @@ data = {
     {
         name: 'Псково-Печерский монастырь',
         id: 'pskov',
+        viewbox: '-150 100 804.7 700.1',
         dates: [
             {
                 date: '1967',

@@ -1,13 +1,13 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
-var timelineMapIcons = document.querySelector('.timeline-map-icons');
-var timelineMapIconsOuter = document.querySelector('.timeline-map-icons-outer');
 var citeBlock = document.querySelector('.timeline-cite-span');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
 var bookRightArrow = document.querySelector('.books-arrow-right');
 var bookLeftArrow = document.querySelector('.books-arrow-left');
+var mainSvg = null;
 
+var dateBlocks = [];
 var periodDates = [];
 var extraTexts = [];
 var bookItems = [];
@@ -16,29 +16,37 @@ var shownBooks = {
     end: 0,
     bookCount: 0
 };
+var windowHeight = 0;
 
 var render = function() {
-    renderSVG({file: 'map.svg', container: timelineMap});
-    renderSVG({file: 'icons.svg', container: timelineMapIcons});
+    renderSVG({file: 'map.svg', container: timelineMap, fn: renderTimeline});
     renderCite();
     renderBooks();
     calcBooksContainer();
     setInterval(renderCite, 15000);
+};
 
+var renderTimeline = function (params) {
+    mainSvg = params.svg;
+    mainSvg.setAttribute('viewBox', data.baseViewBox);
     data.periods.forEach(function(period) {
-        renderTitle(period.name, period.id);
+        renderTitle(period);
+
         period.dates.forEach(function(data) {
             renderDate(data);
         })
     });
 };
 
-var renderTitle = function (name, id) {
+var renderTitle = function (period) {
+    var name = period.name;
+    var id = period.id;
+    var viewbox = period.viewbox;
     var el = document.createElement('div');
+
     el.className = 'period-date';
-    if (id) {
-        el.dataset.id = id;
-    }
+    if (id) el.dataset.id = id;
+    if (viewbox) el.dataset.viewbox = viewbox;
     el.appendChild(createElement(name, 'period-title'));
     timelineBlock.appendChild(el);
 };
@@ -52,10 +60,9 @@ var renderDate = function(data) {
     var date;
     var text;
     var picture = createElement('', 'date-picture');
-    /* if (data.icon) {
-        el.dataset.svgIcon = createSvgIcon(data.icon);
-        console.log(el);
-    } */
+    if (data.icon) {
+        getSvgIcon(data.icon);
+    }
 
     date = data.date
         ? el.appendChild(createElement(data.date, 'date', 'date-text'))
@@ -86,17 +93,21 @@ var renderDate = function(data) {
     extraTexts = document.querySelectorAll('.extra-text');
 };
 
+var getSvgIcon = function(icon) {
+    var el = createElement();
+    renderSVG({file: icon.svg, container: el, noChangeStyle: true, fn: createSvgIcon, params: icon});
+};
 
-var createSvgIcon = function(icon) {
-    var el = createElement('', 'timeline-svg-icon', null, {
-        type: 'a',
-        attrs: [
-            ['href', icon.poster],
-            ['data-lightbox', 'example-set'],
-            ['style', 'top: ' + icon.position.top + 'px; left: ' + icon.position.left + 'px; width: ' + icon.position.width + 'px; height: ' + icon.position.height + 'px;']
-        ]});
-    renderSVG({file: icon.svg, container: el, noChangeStyle: true});
-    timelineMapIconsOuter.appendChild(el);
+var createSvgIcon = function(params) {
+    var svg = params.svg;
+    var icon = params.params;
+    var style = icon.style;
+    var group = svg.querySelector('defs g');
+
+    group.setAttribute('id', icon.id);
+    group.setAttribute('style', style);
+    group.classList.add('timeline-icon');
+    mainSvg.appendChild(group);
     return icon.id;
 };
 
@@ -104,6 +115,7 @@ var renderBooks = function() {
     data.books.forEach(function(book) {
         var bookImg = createImg(book.picture, 'book-picture');
         var bookItem = createElement(book.name || '', 'book-item', 'book-name', {type: 'a', attrs: [['href', book.link], ['target', '_blank']]});
+
         bookItem.appendChild(bookImg);
         booksContent.appendChild(bookItem);
         bookItems.push(bookItem);
@@ -160,6 +172,7 @@ var scrollBooks = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    windowHeight = document.body.clientHeight;
     render();
     scrollBooks();
     lightbox.option({
@@ -201,7 +214,17 @@ window.addEventListener('scroll', function() {
 
     periodDates.forEach(function(periodCont, i) {
         var top = periodCont.getBoundingClientRect().top;
+        var bottom = periodCont.getBoundingClientRect().bottom;
         var nextTop;
+        var viewbox = periodCont.dataset.viewbox.split(' ');
+        var prevViewBox = (i > 0 ? periodDates[i - 1].dataset.viewbox : data.baseViewBox).split(' ');
+
+        var ratios = [
+            (prevViewBox[0] - viewbox[0]) / windowHeight,
+            (prevViewBox[1] - viewbox[1]) / windowHeight,
+            (prevViewBox[2] - viewbox[2]) / windowHeight,
+            (prevViewBox[3] - viewbox[3]) / windowHeight,
+        ];
 
         if (periodDates[i + 1]) {
             nextTop = periodDates[i + 1].getBoundingClientRect().top;
@@ -210,11 +233,25 @@ window.addEventListener('scroll', function() {
             periodCont.classList.add('fixed');
             var periodContId = periodCont.dataset.id;
 
+
             if (periodContId) {
-                document.getElementById(periodContId).classList.add('active-icon');
+                // document.getElementById(periodContId).classList.add('active-icon');
             }
         } else {
             periodCont.classList.remove('fixed');
+        }
+
+        if (bottom < windowHeight && top > 0) {
+            var viewBoxString = '';
+            ratios.forEach(function(ratio, i) {
+                var value = (parseInt(viewbox[i]) + (ratio * top));
+
+                viewBoxString += (value) + ' ';
+            });
+
+            console.log('viewBoxString', viewBoxString);
+
+            mainSvg.setAttribute('viewBox', viewBoxString);
         }
     });
 
