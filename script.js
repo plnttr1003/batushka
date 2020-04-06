@@ -1,6 +1,7 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
 var timelineMapIcons = document.querySelector('.timeline-map-icons');
+var timelineMapIconsOuter = document.querySelector('.timeline-map-icons-outer');
 var citeBlock = document.querySelector('.timeline-cite-span');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
@@ -9,7 +10,6 @@ var bookLeftArrow = document.querySelector('.books-arrow-left');
 
 var periodDates = [];
 var extraTexts = [];
-var svgIcons = [];
 var bookItems = [];
 var shownBooks = {
     start: 0,
@@ -33,48 +33,6 @@ var render = function() {
     });
 };
 
-var createElement = function(text, className, wrapperClassName, params) {
-    var el = document.createElement(params && params.type || 'div');
-    if (wrapperClassName) {
-        el.innerHTML = '<div class="' + wrapperClassName + '">' + text + '</div>'
-    } else {
-        el.innerText = text;
-    }
-    el.className = className;
-    if (params && params.attrs) {
-        params.attrs.forEach(function(attr) {
-            el.setAttribute(attr[0], attr[1]);
-        })
-    }
-    return el;
-};
-
-var createImg = function(src, className) {
-    var el = document.createElement('img');
-    el.setAttribute('src', 'books/' + src);
-    el.className = className;
-    return el;
-};
-
-var renderSVG = function(params) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", 'svg/' + params.file);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            params.container.innerHTML = xhr.responseText;
-            svgIcons = document.querySelectorAll('.svg-icon');
-            params.container.style.display = 'flex';
-        }
-    };
-};
-
-var getRandomInt = function(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-};
-
 var renderTitle = function (name, id) {
     var el = document.createElement('div');
     el.className = 'period-date';
@@ -94,6 +52,10 @@ var renderDate = function(data) {
     var date;
     var text;
     var picture = createElement('', 'date-picture');
+    /* if (data.icon) {
+        el.dataset.svgIcon = createSvgIcon(data.icon);
+        console.log(el);
+    } */
 
     date = data.date
         ? el.appendChild(createElement(data.date, 'date', 'date-text'))
@@ -122,6 +84,20 @@ var renderDate = function(data) {
     dateBlocks = document.querySelectorAll('.date-block');
     periodDates = document.querySelectorAll('.period-date');
     extraTexts = document.querySelectorAll('.extra-text');
+};
+
+
+var createSvgIcon = function(icon) {
+    var el = createElement('', 'timeline-svg-icon', null, {
+        type: 'a',
+        attrs: [
+            ['href', icon.poster],
+            ['data-lightbox', 'example-set'],
+            ['style', 'top: ' + icon.position.top + 'px; left: ' + icon.position.left + 'px; width: ' + icon.position.width + 'px; height: ' + icon.position.height + 'px;']
+        ]});
+    renderSVG({file: icon.svg, container: el, noChangeStyle: true});
+    timelineMapIconsOuter.appendChild(el);
+    return icon.id;
 };
 
 var renderBooks = function() {
@@ -233,10 +209,6 @@ window.addEventListener('scroll', function() {
         if (top < 100 && top > (- nextTop)) {
             periodCont.classList.add('fixed');
             var periodContId = periodCont.dataset.id;
-
-            svgIcons.forEach(function(svgIcon) {
-                svgIcon.classList.remove('active-icon');
-            });
 
             if (periodContId) {
                 document.getElementById(periodContId).classList.add('active-icon');

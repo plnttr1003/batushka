@@ -1,3 +1,18 @@
+.timeline-map-icons-outer {
+    display: flex;
+    width: 1284.7px;
+    height: 2184.1px;
+}
+
+.timeline-svg-icon {
+    position: absolute;
+}
+
+.timeline-svg-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 .timeline-map-background .st1,
 .timeline-map-background .st0 {
     stroke: rgba(195, 195, 195, 0.5);

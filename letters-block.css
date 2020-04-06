@@ -1,0 +1,31 @@
+.letters-blocks {
+    height: auto;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(images/timeline-background.jpg);
+}
+
+.letters-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.letter-column {
+    width: 20%;
+    margin: 0 0.5vw 1vw;
+}
+
+.letter-column a {
+    margin: 1vw 0;
+    display: block;
+    filter: sepia(0.4) grayscale(0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 0;
+    line-height: 0;
+}
+
+.letter-column img {
+    width: 100%;
+    height: auto;
+}

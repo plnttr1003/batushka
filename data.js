@@ -15,6 +15,17 @@ data = {
                 extraText: '',
                 picture: '',
                 featured: true,
+                icon: {
+                    id: 'orel',
+                    svg: 'orel/orel.svg',
+                    position: {
+                        top: 319,
+                        left: 240,
+                        width: 28,
+                        height: 36
+                    },
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
@@ -78,6 +89,17 @@ data = {
                 extraText: '',
                 picture: '',
                 featured: true,
+                icon: {
+                    id: 'spas-chekriak',
+                    svg: 'orel/spas-chekriak.svg',
+                    position: {
+                        left: 238,
+                        top: 301,
+                        width: 24,
+                        height: 19
+                    },
+                    poster: 'poster/orel.jpg'
+                }
             },
             {
                 date: null,
