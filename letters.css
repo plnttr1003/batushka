@@ -94,6 +94,12 @@
     }
 }
 
+@media (min-width: 1200px) {
+    .letters-container {
+        transform: scale(1.2);
+    }
+}
+
 
 .letters-title {
     font-weight: bold;
