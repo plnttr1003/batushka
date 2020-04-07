@@ -546,7 +546,7 @@ data = {
                 icon: {
                     id: 'pustyn',
                     svg: 'sukhumi/pustyn.svg',
-                    style: 'transform: translate(589px, 1021px) scale(0.12);',
+                    style: 'transform: translate(589px, 994px) scale(0.095);',
                     poster: 'poster/pustyn.jpg'
                 }
             },
