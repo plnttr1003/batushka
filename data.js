@@ -19,7 +19,7 @@ data = {
                 featured: true,
                 icon: {
                     id: 'orel',
-                    svg: 'orel/orel.svg',
+                    svg: 'orel/orel_2.svg',
                     style: 'transform: translate(683px, 906px) scale(0.136);',
                     poster: 'poster/orel.jpg'
                 }
@@ -88,7 +88,7 @@ data = {
                 featured: true,
                 icon: {
                     id: 'spas-chekriak',
-                    svg: 'orel/spas-chekriak.svg',
+                    svg: 'orel/spas-chekriak_2.svg',
                     style: 'transform: translate(677px, 854px) scale(0.08);',
                     poster: 'poster/orel.jpg'
                 }
@@ -235,7 +235,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'vagankovo',
-                    svg: 'moscow/vagankovo.svg',
+                    svg: 'moscow/vagankovo_2.svg',
                     style: 'transform: translate(651px, 673px) scale(0.09);',
                     poster: 'poster/orel.jpg'
                 }
@@ -269,7 +269,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'izmaylovo',
-                    svg: 'moscow/izmaylovo.svg',
+                    svg: 'moscow/izmaylovo_2.svg',
                     style: 'transform: translate(743px, 637px) scale(0.10);',
                     poster: 'poster/orel.jpg'
                 }
@@ -323,7 +323,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'kargopol',
-                    svg: 'kargopol/kargopol.svg',
+                    svg: 'kargopol/kargopol_2.svg',
                     style: 'transform: translate(887px, 106px) scale(0.13);',
                     poster: 'poster/orel.jpg'
                 }
@@ -385,7 +385,7 @@ data = {
                 featured: true,
                 icon: {
                     id: 'pskovo-pechorskiy',
-                    svg: 'pskov/pskovo-pechorskiy.svg',
+                    svg: 'pskov/pskovo-pechorskiy_2.svg',
                     style: 'transform: translate(334px, 464px) scale(0.10);}',
                     poster: 'poster/orel.jpg'
                 }
@@ -398,7 +398,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'pskov',
-                    svg: 'pskov/pskov.svg',
+                    svg: 'pskov/pskov_2.svg',
                     style: 'transform: translate(421px, 526px) scale(0.12);',
                     poster: 'poster/orel.jpg'
                 }
@@ -431,7 +431,7 @@ data = {
                 featured: true,
                 icon: {
                     id: 'yasakovo',
-                    svg: 'ryazan/yasakovo.svg',
+                    svg: 'ryazan/yasakovo_2.svg',
                     style: 'transform: translate(905px, 776px) scale(0.11);',
                     poster: 'poster/orel.jpg'
                 }
@@ -458,7 +458,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'letovo',
-                    svg: 'ryazan/letovo.svg',
+                    svg: 'ryazan/letovo_2.svg',
                     style: 'transform: translate(815px, 728px) scale(0.10);',
                     poster: 'poster/orel.jpg'
                 }
@@ -527,7 +527,7 @@ data = {
                 featured: true,
                 icon: {
                     id: 'sukhumi',
-                    svg: 'sukhumi/sukhumi.svg',
+                    svg: 'sukhumi/sukhumi_2.svg',
                     style: 'transform: translate(879px, 1594px) scale(0.10);',
                     poster: 'poster/orel.jpg'
                 }

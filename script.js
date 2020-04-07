@@ -106,12 +106,25 @@ var createSvgIcon = function(params) {
     var svg = params.svg;
     var icon = params.params;
     var style = icon.style;
-    var group = svg.querySelector('defs g');
+    var groups = svg.querySelectorAll('defs g');
+    var iconGroup = document.createElementNS("http://www.w3.org/2000/svg","g");
 
-    group.setAttribute('id', icon.id);
-    group.setAttribute('style', style);
-    group.classList.add('timeline-icon');
-    mainSvg.appendChild(group);
+    iconGroup.setAttribute('id', icon.id);
+    iconGroup.setAttribute('style', style);
+    iconGroup.classList.add('timeline-icon');
+
+    groups.forEach(function(group, i) {
+        if (i === 0) {
+            group.classList.add('icon-background');
+        }
+        if (i === 1) {
+            group.classList.add('icon-content');
+        }
+        iconGroup.appendChild(group);
+    });
+
+    mainSvg.appendChild(iconGroup);
+
     return icon.id;
 };
 
@@ -176,9 +189,6 @@ var scrollBooks = function() {
 };
 
 var calcScrollValues = function() {
-
-    console.log('periodDates::', periodDates);
-
     var offsetHeights = [];
     periodDates.forEach(function (periodCont, i) {
         if (i > 1) {
@@ -249,7 +259,6 @@ window.addEventListener('scroll', function() {
 
     periodDates.forEach(function(periodCont, i) {
         var top = periodCont.getBoundingClientRect().top;
-        var bottom = periodCont.getBoundingClientRect().bottom;
         var nextTop;
 
         if (periodDates[i + 1]) {
