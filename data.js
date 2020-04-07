@@ -665,42 +665,42 @@ data = {
     books: [
         {
             name: 'Размышления о бессмертной душе',
-            picture: '01.jpg',
+            picture: 'books/01.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Радовать и радоваться',
-            picture: '02.jpg',
+            picture: 'books/02.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Отец Иоанн',
-            picture: '03.jpg',
+            picture: 'books/03.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Рассуждай и действуй',
-            picture: '04.jpg',
+            picture: 'books/04.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Божий инок',
-            picture: '05.jpg',
+            picture: 'books/05.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Неведомомому чаду',
-            picture: '06.jpg',
+            picture: 'books/06.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Дом души',
-            picture: '07.jpg',
+            picture: 'books/07.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         },
                 {
             name: 'Память сердца',
-            picture: '08.jpg',
+            picture: 'books/08.jpg',
             link: 'http://vsbook.imaginweb.ru/',
         }
     ]

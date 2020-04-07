@@ -1,3 +1,6 @@
+var popupOverlay = document.querySelector('.popup-overlay');
+var popupContent = document.querySelector('.popup-content');
+
 var createElement = function(text, className, wrapperClassName, params) {
     var el = document.createElement(params && params.type || 'div');
     if (wrapperClassName) {
@@ -18,7 +21,7 @@ var createElement = function(text, className, wrapperClassName, params) {
 
 var createImg = function(src, className) {
     var el = document.createElement('img');
-    el.setAttribute('src', 'books/' + src);
+    el.setAttribute('src', src);
     el.className = className;
     return el;
 };
@@ -56,3 +59,16 @@ var renderSVG = function(params) {
         }
     };
 };
+
+var openPopup = function (params) {
+    console.log('params', params);
+    var posterImg = createImg(params.image, 'book-picture');
+
+    popupOverlay.classList.add('right');
+    popupContent.innerHTML = '';
+    popupContent.appendChild(posterImg);
+};
+
+popupOverlay.addEventListener('click', function () {
+    popupOverlay.classList.remove('right');
+});

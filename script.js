@@ -105,6 +105,7 @@ var getSvgIcon = function(icon) {
 var createSvgIcon = function(params) {
     var svg = params.svg;
     var icon = params.params;
+    var poster =  params.params.poster;
     var style = icon.style;
     var groups = svg.querySelectorAll('defs g');
     var iconGroup = document.createElementNS("http://www.w3.org/2000/svg","g");
@@ -112,6 +113,10 @@ var createSvgIcon = function(params) {
     iconGroup.setAttribute('id', icon.id);
     iconGroup.setAttribute('style', style);
     iconGroup.classList.add('timeline-icon');
+
+    iconGroup.addEventListener('click', function() {
+        openPopup({position: 'right', image: poster});
+    });
 
     groups.forEach(function(group, i) {
         if (i === 0) {
@@ -277,9 +282,6 @@ window.addEventListener('scroll', function() {
         }
 
         if (top < minOffsetHeight && top > 0) {
-
-            console.log(periodCont);
-
             var viewBoxString = '';
             periodDateScroll[i].ratios.forEach(function(ratio, k) {
                 var value = (parseInt(periodDateScroll[i].viewbox[k]) + ratio * top);
