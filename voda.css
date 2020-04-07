@@ -107,7 +107,8 @@ g#icos g:hover .st4 {
     stroke: rgba(0, 0, 0, 0.45);
 }
 
-.timeline-icon .icon-content path {
+.timeline-icon .icon-content path,
+.timeline-icon .icon-background path {
     fill: rgba(82, 40, 16, 0.8);
     transition: all ease 3s;
     stroke-width: 2px;

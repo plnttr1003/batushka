@@ -271,7 +271,7 @@ data = {
                     id: 'izmaylovo',
                     svg: 'moscow/izmaylovo_2.svg',
                     style: 'transform: translate(743px, 637px) scale(0.10);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/izmaylovo.jpg'
                 }
             },
             {
@@ -325,7 +325,7 @@ data = {
                     id: 'kargopol',
                     svg: 'kargopol/kargopol_2.svg',
                     style: 'transform: translate(887px, 106px) scale(0.13);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/kargopol.jpg'
                 }
             },
             {
@@ -400,7 +400,7 @@ data = {
                     id: 'pskov',
                     svg: 'pskov/pskov_2.svg',
                     style: 'transform: translate(421px, 526px) scale(0.12);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/pskov.jpg'
                 }
             },
             {
@@ -529,7 +529,7 @@ data = {
                     id: 'sukhumi',
                     svg: 'sukhumi/sukhumi_2.svg',
                     style: 'transform: translate(879px, 1594px) scale(0.10);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/sukhumi.jpg'
                 }
             },
             {
