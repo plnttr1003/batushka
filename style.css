@@ -164,7 +164,7 @@ body {
 .timeline-main {
     z-index: 4;
     position: relative;
-    /* pointer-events: none; */
+    pointer-events: none;
 }
 
 .timeline-cite {
