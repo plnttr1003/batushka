@@ -17,6 +17,8 @@ var shownBooks = {
     bookCount: 0
 };
 var windowHeight = 0;
+var minOffsetHeight = 0;
+var periodDateScroll = [];
 
 var render = function() {
     renderSVG({file: 'map.svg', container: timelineMap, fn: renderTimeline});
@@ -36,6 +38,11 @@ var renderTimeline = function (params) {
             renderDate(data);
         })
     });
+
+    dateBlocks = document.querySelectorAll('.date-block');
+    periodDates = document.querySelectorAll('.period-date');
+    extraTexts = document.querySelectorAll('.extra-text');
+    calcScrollValues();
 };
 
 var renderTitle = function (period) {
@@ -88,9 +95,6 @@ var renderDate = function(data) {
 
     el.className = data.featured ? 'date-block featured' : 'date-block';
     timelineBlock.appendChild(el);
-    dateBlocks = document.querySelectorAll('.date-block');
-    periodDates = document.querySelectorAll('.period-date');
-    extraTexts = document.querySelectorAll('.extra-text');
 };
 
 var getSvgIcon = function(icon) {
@@ -171,6 +175,37 @@ var scrollBooks = function() {
     });
 };
 
+var calcScrollValues = function() {
+
+    console.log('periodDates::', periodDates);
+
+    var offsetHeights = [];
+    periodDates.forEach(function (periodCont, i) {
+        if (i > 1) {
+            var offsetHeight = periodCont.getBoundingClientRect().top - periodDates[i - 1].getBoundingClientRect().top;
+            offsetHeights.push(offsetHeight);
+        }
+    });
+    minOffsetHeight = Math.min.apply(Math, offsetHeights);
+
+
+    periodDates.forEach(function (periodCont, i) {
+        var viewbox = periodCont.dataset.viewbox.split(' ');
+        var prevViewBox = (i > 0 ? periodDates[i - 1].dataset.viewbox : data.baseViewBox).split(' ');
+        var ratios = [];
+
+        prevViewBox.forEach(function(prevValue, i) {
+            ratios.push((prevValue - viewbox[i]) / minOffsetHeight);
+        });
+        periodDateScroll.push({
+            viewbox: viewbox,
+            ratios: ratios,
+        })
+    });
+
+    console.log('periodDateScroll::', periodDateScroll);
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     windowHeight = document.body.clientHeight;
     render();
@@ -216,15 +251,6 @@ window.addEventListener('scroll', function() {
         var top = periodCont.getBoundingClientRect().top;
         var bottom = periodCont.getBoundingClientRect().bottom;
         var nextTop;
-        var viewbox = periodCont.dataset.viewbox.split(' ');
-        var prevViewBox = (i > 0 ? periodDates[i - 1].dataset.viewbox : data.baseViewBox).split(' ');
-
-        var ratios = [
-            (prevViewBox[0] - viewbox[0]) / windowHeight,
-            (prevViewBox[1] - viewbox[1]) / windowHeight,
-            (prevViewBox[2] - viewbox[2]) / windowHeight,
-            (prevViewBox[3] - viewbox[3]) / windowHeight,
-        ];
 
         if (periodDates[i + 1]) {
             nextTop = periodDates[i + 1].getBoundingClientRect().top;
@@ -241,16 +267,16 @@ window.addEventListener('scroll', function() {
             periodCont.classList.remove('fixed');
         }
 
-        if (bottom < windowHeight && top > 0) {
+        if (top < minOffsetHeight && top > 0) {
+
+            console.log(periodCont);
+
             var viewBoxString = '';
-            ratios.forEach(function(ratio, i) {
-                var value = (parseInt(viewbox[i]) + (ratio * top));
+            periodDateScroll[i].ratios.forEach(function(ratio, k) {
+                var value = (parseInt(periodDateScroll[i].viewbox[k]) + ratio * top);
 
                 viewBoxString += (value) + ' ';
             });
-
-            console.log('viewBoxString', viewBoxString);
-
             mainSvg.setAttribute('viewBox', viewBoxString);
         }
     });
