@@ -62,11 +62,12 @@ var renderSVG = function(params) {
 var openPopup = function (params) {
     var posterImg = createImg(params.image, 'book-picture');
 
-    popupOverlay.classList.add('right');
+    popupOverlay.classList.add(params.position);
     popupContent.innerHTML = '';
     popupContent.appendChild(posterImg);
 };
 
 popupOverlay.addEventListener('click', function () {
     popupOverlay.classList.remove('right');
+    popupOverlay.classList.remove('center');
 });

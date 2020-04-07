@@ -85,6 +85,12 @@ var renderDate = function(data) {
 
     if (data.picture) {
         picture.setAttribute('style', 'background-image: url("timeline/' + data.picture +'")');
+        if (data.popupPicture) {
+            picture.addEventListener('click', function() {
+                console.log(data.popupPicture);
+                openPopup({position: 'center', image: 'timeline/' + data.popupPicture});
+            });
+        }
     } else {
         picture.classList.add('dotted');
     }
