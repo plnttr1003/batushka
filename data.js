@@ -553,7 +553,7 @@ data = {
                 icon: {
                     id: 'sukhumi',
                     svg: 'sukhumi/sukhumi_2.svg',
-                    style: 'transform: translate(879px, 1594px) scale(0.10);',
+                    style: 'transform: translate(859px, 1561px) scale(0.14);',
                     poster: 'poster/sukhumi.jpg'
                 }
             },
