@@ -76,9 +76,7 @@
 
 .timeline-map-background .st1,
 .timeline-map-background .st0 {
-    stroke: rgba(195, 195, 195, 0.5);
-    stroke-width: 2px;
-    fill: none;
+    fill: rgba(195, 195, 195, 0.47);
 }
 
 .timeline-map-background .st3 {
@@ -108,10 +106,12 @@
     fill: none;
 }
 
+.timeline-map-background .st8 {
+    fill: #ccc;
+}
+
 .timeline-map-background .st2 {
-    stroke: rgba(179, 179, 179, 0.5);
-    stroke-width: 4px;
-    fill: none;
+    fill: rgba(179, 179, 179, 0.5);
 }
 
 .timeline-map-background .st9,
@@ -161,4 +161,10 @@ g#icos g:hover .st4 {
 
 .timeline-map-icons {
     opacity: 0.4;
+}
+
+.timeline-map-background text,
+.timeline-map-background circle,
+.timeline-map-background .st16 {
+    display: none;
 }

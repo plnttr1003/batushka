@@ -22,7 +22,7 @@ var minOffsetHeight = 0;
 var periodDateScroll = [];
 
 var render = function() {
-    renderSVG({file: 'map.svg', container: timelineMap, fn: renderTimeline});
+    renderSVG({file: 'map_2.svg', container: timelineMap, fn: renderTimeline});
     renderCite();
     renderBooks();
     calcBooksContainer();

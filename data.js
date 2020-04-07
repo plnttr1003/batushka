@@ -20,7 +20,7 @@ data = {
                 icon: {
                     id: 'orel',
                     svg: 'orel/orel_2.svg',
-                    style: 'transform: translate(683px, 906px) scale(0.136);',
+                    style: 'transform: translate(753px, 896px) scale(0.136)',
                     poster: 'poster/orel.jpg'
                 }
             },
@@ -93,7 +93,7 @@ data = {
                 icon: {
                     id: 'spas-chekriak',
                     svg: 'orel/spas-chekriak_2.svg',
-                    style: 'transform: translate(677px, 854px) scale(0.08);',
+                    style: 'transform: translate(667px, 864px) scale(0.08);',
                     poster: 'poster/orel.jpg'
                 }
             },
