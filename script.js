@@ -217,8 +217,6 @@ var calcScrollValues = function() {
             ratios: ratios,
         })
     });
-
-    console.log('periodDateScroll::', periodDateScroll);
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -239,6 +237,7 @@ window.addEventListener('resize', function () {
 });
 
 window.addEventListener('scroll', function() {
+    var activeDate = true;
     if (timelineBlock.getBoundingClientRect().bottom < 0) {
         timelineCite.style.display = 'none';
     }  else {
@@ -273,7 +272,6 @@ window.addEventListener('scroll', function() {
             periodCont.classList.add('fixed');
             var periodContId = periodCont.dataset.id;
 
-
             if (periodContId) {
                 // document.getElementById(periodContId).classList.add('active-icon');
             }
@@ -299,6 +297,13 @@ window.addEventListener('scroll', function() {
             dataBlock.classList.add('date-block-hidden');
         } else {
             dataBlock.classList.remove('date-block-hidden');
+        }
+
+        if ((top > windowHeight / 2 - 100) && (top < windowHeight / 2 + 100) && activeDate) {
+            dataBlock.classList.add('active-date');
+            activeDate = false;
+        } else {
+            dataBlock.classList.remove('active-date');
         }
     })
 });

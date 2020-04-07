@@ -103,6 +103,7 @@ body {
     display: block;
     background: #000;
     top: -2px;
+    transition: transform 0.2s ease;
 }
 
 .timeline .date-block .date-empty {
@@ -133,6 +134,10 @@ body {
     font-size: 22px;
     line-height: 30px;
     padding-top: 15px;
+}
+
+.timeline .date-block.active-date .date:after {
+    transform: scale(2);
 }
 
 .timeline-map {
@@ -269,6 +274,8 @@ body {
     height: 100vh;
 }
 
+/*
+
 #blue:target .timeline {
     background-color: #1a3b54;
     background-image: url(images/timeline-background-bw.jpg);
@@ -299,3 +306,5 @@ body {
 #blue:target .timeline-map {
     display: none!important;
 }
+
+ */

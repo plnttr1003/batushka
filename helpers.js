@@ -49,7 +49,6 @@ var renderSVG = function(params) {
                 container.innerHTML = xhr.responseText;
                 mainSvg = container.querySelector('svg');
                 if (fn) {
-                    console.log('========================');
                     fn({ svg:mainSvg, el:container, params:parameters });
                 }
                 if (!noChangeStyle) {
@@ -61,7 +60,6 @@ var renderSVG = function(params) {
 };
 
 var openPopup = function (params) {
-    console.log('params', params);
     var posterImg = createImg(params.image, 'book-picture');
 
     popupOverlay.classList.add('right');
