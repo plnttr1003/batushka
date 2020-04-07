@@ -249,7 +249,7 @@ data = {
                     id: 'vagankovo',
                     svg: 'moscow/vagankovo_2.svg',
                     style: 'transform: translate(651px, 673px) scale(0.09);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/vagankovo.jpg'
                 }
             },
             {
@@ -543,6 +543,12 @@ data = {
                 picture: '26.jpg',
                 popupPicture: '26-big.jpg',
                 featured: false,
+                icon: {
+                    id: 'pustyn',
+                    svg: 'sukhumi/pustyn.svg',
+                    style: 'transform: translate(589px, 1021px) scale(0.12);',
+                    poster: 'poster/pustyn.jpg'
+                }
             },
             {
                 date: '1966',

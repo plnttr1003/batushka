@@ -97,14 +97,10 @@
 .timeline-map-background .st6,
 .timeline-map-background .st7 {
     fill: rgba(175, 174, 174, 0.8);
-    /* stroke-width: 8px; */
 }
 
 .timeline-map-background .st6,
 .timeline-map-background .st7 {
-    /* stroke: rgba(175, 174, 174, 0.4); */
-    /* stroke-width: 8px; */
-    /* fill: none; */
 }
 
 .timeline-map-background .st8 {
@@ -131,12 +127,17 @@ g#icos g:hover .st4 {
     stroke: rgba(0, 0, 0, 0.45);
 }
 
-.timeline-icon .icon-content path,
-.timeline-icon .icon-background path {
+.timeline-icon .icon-content path {
     fill: rgba(82, 40, 16, 0.8);
     transition: all ease 3s;
     stroke-width: 2px;
     stroke: rgba(82, 40, 16, 0.8);
+}
+
+.timeline-icon .icon-background path {
+    stroke-width: 0;
+    stroke: transparent;
+    fill: transparent;
 }
 
 .timeline-icon.active-icon .icon-content path {
@@ -150,9 +151,6 @@ g#icos g:hover .st4 {
     cursor: pointer;
 }
 
-.timeline-icon .icon-background path {
-    fill: transparent;
-}
 
 .timeline-icon:hover .icon-content path {
     fill: rgba(82, 40, 16, 1);
@@ -167,6 +165,8 @@ g#icos g:hover .st4 {
 
 .timeline-map-background text,
 .timeline-map-background circle,
-.timeline-map-background .st16 {
+.timeline-map-background .st16,
+.timeline-map-background .st15
+{
     display: none;
 }
