@@ -448,13 +448,7 @@ data = {
                 text: 'начало служения в храме Троице-Пеленица, Ясаково',
                 extraText: 'Избегая повторного ареста, отец Иоанн уехал в Рязанскую епархию, где ему предстояло скитаться по разным приходам в течение 10 лет. За это время батюшка возродил 5 храмов.',
                 picture: '',
-                featured: true,
-                icon: {
-                    id: 'yasakovo',
-                    svg: 'ryazan/yasakovo_2.svg',
-                    style: 'transform: translate(905px, 776px) scale(0.11);',
-                    poster: 'poster/orel.jpg'
-                }
+                featured: true
             },
             {
                 date: null,
@@ -506,6 +500,12 @@ data = {
                 extraText: 'В Некрасовку, на 270 км удаленную от Рязани, зимой после снегопада и в распутицу, дороги совсем не было. В другое время года из Рязани летали на «кукурузнике».',
                 picture: false,
                 featured: true,
+                icon: {
+                    id: 'nekrasovka',
+                    svg: 'ryazan/nekrasovka.svg',
+                    style: 'transform: translate(905px, 776px) scale(0.11);',
+                    poster: 'poster/nekrasovka.jpg'
+                }
             },
             {
                 date: '1964',
