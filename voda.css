@@ -109,9 +109,16 @@ g#icos g:hover .st4 {
 
 .timeline-icon .icon-content path {
     fill: rgba(82, 40, 16, 0.8);
-    transition: stroke ease 1.4s;
+    transition: all ease 3s;
     stroke-width: 2px;
     stroke: rgba(82, 40, 16, 0.8);
+}
+
+.timeline-icon.active-icon .icon-content path {
+    fill: rgba(82, 40, 16, 1);
+    transition: stroke ease 1.4s;
+    stroke-width: 7px;
+    stroke: rgba(0, 0, 0, 1);
 }
 
 .timeline-icon {

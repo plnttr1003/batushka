@@ -16,6 +16,7 @@ var shownBooks = {
     end: 0,
     bookCount: 0
 };
+var svgIcons = [];
 var windowHeight = 0;
 var minOffsetHeight = 0;
 var periodDateScroll = [];
@@ -69,6 +70,7 @@ var renderDate = function(data) {
     var picture = createElement('', 'date-picture');
     if (data.icon) {
         getSvgIcon(data.icon);
+        el.dataset.iconId = data.icon.id;
     }
 
     date = data.date
@@ -117,6 +119,8 @@ var createSvgIcon = function(params) {
     iconGroup.addEventListener('click', function() {
         openPopup({position: 'right', image: poster});
     });
+
+    svgIcons.push(iconGroup);
 
     groups.forEach(function(group, i) {
         if (i === 0) {
@@ -178,7 +182,6 @@ var scrollBooks = function() {
                 bookRightArrow.style.opacity = 0.5;
             }
         }
-
     });
     bookLeftArrow.addEventListener('click', function () {
         if (shownBooks.end > shownBooks.bookCount) {
@@ -202,7 +205,6 @@ var calcScrollValues = function() {
         }
     });
     minOffsetHeight = Math.min.apply(Math, offsetHeights);
-
 
     periodDates.forEach(function (periodCont, i) {
         var viewbox = periodCont.dataset.viewbox.split(' ');
@@ -301,9 +303,24 @@ window.addEventListener('scroll', function() {
 
         if ((top > windowHeight / 2 - 100) && (top < windowHeight / 2 + 100) && activeDate) {
             dataBlock.classList.add('active-date');
+            console.log('dataBlock::', dataBlock);
             activeDate = false;
+            if (dataBlock.dataset.iconId) {
+                svgIcons.forEach(function(svgIcon) {
+                    if (svgIcon.getAttribute('id') === dataBlock.dataset.iconId) {
+                        svgIcon.classList.add('active-icon');
+                    }
+                })
+            }
         } else {
             dataBlock.classList.remove('active-date');
+            if (dataBlock.dataset.iconId) {
+                svgIcons.forEach(function(svgIcon) {
+                    if (svgIcon.getAttribute('id') === dataBlock.dataset.iconId) {
+                        svgIcon.classList.remove('active-icon');
+                    }
+                })
+            }
         }
     })
 });
