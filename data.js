@@ -402,10 +402,10 @@ data = {
                 picture: '',
                 featured: true,
                 icon: {
-                    id: 'pskovo-pechorskiy',
+                    id: 'pechory',
                     svg: 'pskov/pskovo-pechorskiy_2.svg',
                     style: 'transform: translate(334px, 464px) scale(0.10);}',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/pechory.jpg'
                 }
             },
             {
@@ -482,7 +482,7 @@ data = {
                     id: 'letovo',
                     svg: 'ryazan/letovo_2.svg',
                     style: 'transform: translate(815px, 728px) scale(0.10);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/letovo.jpg'
                 }
             },
             {
@@ -568,7 +568,7 @@ data = {
     },
     {
         name: 'Псково-Печерский монастырь',
-        id: 'pskov',
+        id: 'pechory',
         viewbox: '-150 100 804.7 700.1',
         dates: [
             {
