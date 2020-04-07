@@ -278,3 +278,7 @@
         margin-left: 250px;
     }
 }
+
+.letter-column a.letter-hidden {
+    display: none;
+}
