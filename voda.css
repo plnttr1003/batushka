@@ -77,6 +77,7 @@
 .timeline-map-background .st1,
 .timeline-map-background .st0 {
     fill: rgba(195, 195, 195, 0.47);
+    stroke: transparent;
 }
 
 .timeline-map-background .st3 {
@@ -95,19 +96,20 @@
 
 .timeline-map-background .st6,
 .timeline-map-background .st7 {
-    stroke: rgba(175, 174, 174, 0.4);
-    stroke-width: 8px;
+    fill: rgba(175, 174, 174, 0.8);
+    /* stroke-width: 8px; */
 }
 
 .timeline-map-background .st6,
 .timeline-map-background .st7 {
-    stroke: rgba(175, 174, 174, 0.4);
-    stroke-width: 8px;
-    fill: none;
+    /* stroke: rgba(175, 174, 174, 0.4); */
+    /* stroke-width: 8px; */
+    /* fill: none; */
 }
 
 .timeline-map-background .st8 {
     fill: #ccc;
+    stroke: transparent;
 }
 
 .timeline-map-background .st2 {
