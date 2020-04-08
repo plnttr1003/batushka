@@ -95,7 +95,6 @@
     line-height: 28px;
     letter-spacing: -0.025em;
     text-transform: uppercase;
-    color: #292929;
     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
 }
 
@@ -226,7 +225,6 @@
         font-size: 15px;
         line-height: 17px;
         width: 393px;
-        color: #292929;
         /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
     }
 }

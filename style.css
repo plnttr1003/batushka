@@ -13,6 +13,7 @@ body {
     background-position: 40%;
     background-attachment: fixed;
     background-size: cover;
+    color: rgb(26, 59, 84);
 }
 
 .timeline {
@@ -79,7 +80,7 @@ body {
 .timeline .date-block .date {
     width: 30vw;
     padding-right: 20px;
-    border-right: 1px solid #000;
+    border-right: 1px solid rgb(26, 59, 84);
     text-align: right;
     padding-top: 20px;
     padding-bottom: 40px;
@@ -101,7 +102,7 @@ body {
     border-radius: 100%;
     content: '';
     display: block;
-    background: #000;
+    background: rgb(26, 59, 84);
     top: -2px;
     transition: transform 0.2s ease;
 }
