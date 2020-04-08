@@ -339,7 +339,7 @@ data = {
                 featured: false,
                 icon: {
                     id: 'kargopol',
-                    svg: 'kargopol/kargopol_2.svg',
+                    svg: 'kargopol/kargopol.svg',
                     style: 'transform: translate(887px, 106px) scale(0.13);',
                     poster: 'poster/kargopol.jpg'
                 }
