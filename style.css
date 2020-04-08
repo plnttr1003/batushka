@@ -86,7 +86,7 @@ body {
     padding-bottom: 40px;
     flex: 0 0 30vw;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 23px;
     display: flex;
     flex-direction: row-reverse;
@@ -165,7 +165,7 @@ body {
 .timeline-main {
     z-index: 4;
     position: relative;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .timeline-cite {
