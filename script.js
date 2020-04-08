@@ -1,6 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
-var citeBlock = document.querySelector('.timeline-cite-span');
+var citeBlock = document.querySelectorAll('.timeline-cite-span');
 var blockBooks = document.querySelector('.block.books');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
@@ -61,7 +61,8 @@ var renderTitle = function (period) {
 };
 
 var renderCite = function () {
-    citeBlock.innerText = data.citates[getRandomInt(0, data.citates.length)]
+    citeBlock[0].innerText = data.citates[getRandomInt(0, data.citates.length)]
+    citeBlock[1].innerText = data.citates[getRandomInt(0, data.citates.length)]
 };
 
 var renderDate = function(data) {
@@ -248,11 +249,11 @@ window.addEventListener('resize', function () {
 window.addEventListener('scroll', function() {
     var blockBooksTop = blockBooks.getBoundingClientRect().top;
     var activeDate = true;
-    if (blockBooksTop > 0) {
+    /* if (blockBooksTop > 0) {
         timelineCite.classList.remove('fixed');
     }  else {
         timelineCite.classList.add('fixed');
-    }
+    } */
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;

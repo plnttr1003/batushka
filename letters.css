@@ -81,7 +81,14 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1220px) {
+    .letters-container {
+        transform: scale(1.1) translate(0, 50px);
+        transform-origin: 50%;
+    }
+}
+
+@media (min-width: 1465px) {
     .letters-container {
         transform: scale(1.3) translate(0, 50px);
         transform-origin: 50%;
