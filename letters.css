@@ -1,26 +1,7 @@
 .pre-letters {
     position: relative;
     background: rgba(255, 255, 255, 0.7);
-}
-
-.pre-letters-mask {
-    position: absolute;
-    background-image: linear-gradient(180deg, rgba(191, 180, 153, 0.7) 10%, rgba(191, 180, 153, 0.7) 50%), url(images/timeline-background.jpg);
-    background-attachment: scroll, fixed;
-    background-size: cover;
-    background-position: 40%;
-    mask: url(images/letters-trees-mask.png);
-    mask-size: 100% 50%;
-    mask-repeat: no-repeat;
-    mask-position: 0 100%;
-    -webkit-mask: url(images/letters-trees-mask.png);
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: 0 100%;
-    width: 100%;
-    bottom: -1px;
-    height: 100%;
-    z-index: 5;
+    z-index: 9;
 }
 
 .letters {
@@ -40,13 +21,13 @@
 
 @media (min-width: 520px) {
     .letters {
-        min-height: 830px;
+        min-height: 980px;
     }
 }
 
 @media (min-width: 1200px) {
     .letters {
-        max-height: 830px;
+        max-height: 980px;
     }
 }
 
@@ -102,7 +83,7 @@
 
 @media (min-width: 1200px) {
     .letters-container {
-        transform: scale(1.2);
+        transform: scale(1.3) translate(0, 50px);
         transform-origin: 50%;
     }
 }

@@ -246,11 +246,11 @@ window.addEventListener('resize', function () {
 
 window.addEventListener('scroll', function() {
     var activeDate = true;
-    if (timelineBlock.getBoundingClientRect().bottom < 0) {
+    /*if (timelineBlock.getBoundingClientRect().bottom < 0) {
         timelineCite.style.display = 'none';
     }  else {
         timelineCite.style.display = 'flex';
-    }
+    }*/
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
@@ -301,7 +301,7 @@ window.addEventListener('scroll', function() {
     dateBlocks.forEach(function(dataBlock) {
         var top = dataBlock.getBoundingClientRect().top;
 
-        if (top < 150) {
+        if (top < 50) {
             dataBlock.classList.add('date-block-hidden');
         } else {
             dataBlock.classList.remove('date-block-hidden');
