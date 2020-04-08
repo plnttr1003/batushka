@@ -687,7 +687,7 @@ data = {
         'Достойно горького плача состояние души человеческой, которая на безграничную любовь Божию  отвечает дерзким богоборчеством.',
         'Судя по житейским нашим невзгодам, смущению и смятению в душах наших, тревожен сегодняшний взгляд Христа на мир.',
         'Какие чудеса творили наши предки своими руками, с любовью в сердце к Богу, как умели они украшать этот мир, не унывая и не отчаиваясь оттого, что мир лежит во зле, как не замыкались они в себе, но щедро отдавали себя людям.',
-        'В школу жизни всякий человек вступает с рождения и идет по жизни, ведомый родителями, учителями, наставниками. Школа же духовной жизни настолько выше, важнее и сложнее, насколько несоизмеримо величественнее конечная цель духовного воспитания, – познание Бога, единение с Богом и утверждение в Боге.',
+        // 'В школу жизни всякий человек вступает с рождения и идет по жизни, ведомый родителями, учителями, наставниками. Школа же духовной жизни настолько выше, важнее и сложнее, насколько несоизмеримо величественнее конечная цель духовного воспитания, – познание Бога, единение с Богом и утверждение в Боге.',
         'Верующий человек обязан вести себя так, чтобы не причинять неприятности другим. Не вызывать своим поведением ни огорчения, ни слез у тех, с кем нам приходится общаться.',
         'Иисус Христос в Святом Евангелии оставил нам Свой образ не для того, чтобы мы только удивлялись или восхищались им как необыкновенно высоким, совершенным, непостижимым, но именно для того, чтобы мы стремились, пытались подражать Ему.',
         'Тысячу лет назад и на нашей земле засиял свет Христовой веры, и на стволе Вселенской Церкви выросла громадная ветвь – Церковь Русская! И маленьким листочком на этой ветви является каждый из нас.',
@@ -699,44 +699,112 @@ data = {
     ],
     books: [
         {
-            name: 'Размышления о бессмертной душе',
-            picture: 'books/01.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
-        },
-                {
-            name: 'Радовать и радоваться',
+            name: 'РАДОВАТЬ И РАДОВАТЬСЯ. ПРАКТИЧЕСКИЕ СОВЕТЫ АРХИМАНДРИТА ИОАННА (КРЕСТЬЯНКИНА).',
             picture: 'books/02.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
+            link: 'https://vsbook.ru/shop/product/radovat-i-radovatjsya',
         },
-                {
-            name: 'Отец Иоанн',
-            picture: 'books/03.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
-        },
-                {
-            name: 'Рассуждай и действуй',
-            picture: 'books/04.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
-        },
-                {
-            name: 'Божий инок',
+        {
+            name: 'БОЖИЙ ИНОК',
             picture: 'books/05.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
+            link: 'https://vsbook.ru/shop/product/bozhiy-inok',
         },
-                {
-            name: 'Неведомомому чаду',
-            picture: 'books/06.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
-        },
-                {
-            name: 'Дом души',
+        {
+            name: 'ДОМ ДУШИ',
             picture: 'books/07.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
+            link: 'https://vsbook.ru/shop/product/dom-dushi',
         },
-                {
-            name: 'Память сердца',
+        {
+            name: 'РАЗМЫШЛЕНИЯ О БЕССМЕРТНОЙ ДУШЕ',
+            picture: 'books/01.jpg',
+            link: 'https://vsbook.ru/shop/product/razmyshleniya-o-bessmertnoy-dushe',
+        },
+        {
+            name: 'ПАМЯТЬ СЕРДЦА',
             picture: 'books/08.jpg',
-            link: 'http://vsbook.imaginweb.ru/',
+            link: ' https://vsbook.ru/shop/product/pamyat-serdtsa',
+        },
+        {
+            name: 'НЕВЕДОМОМУ ЧАДУ',
+            picture: 'books/06.jpg',
+            link: 'https://vsbook.ru/shop/product/nevedomomu-chadu',
+        },
+        {
+            name: 'ОТЕЦ ИОАНН (ИЗ КНИГИ "НЕСВЯТЫЕ СВЯТЫЕ")',
+            picture: 'books/03.jpg',
+            link: 'https://vsbook.ru/shop/product/otets-ioann-iz-knigi-nesvyatyye-svyatyye',
+        },
+        {
+            name: 'МИРОМ ПРАВИТ БОГ. СТАРЦЫ',
+            picture: 'books/09.jpg',
+            link: 'https://vsbook.ru/shop/product/mirom-pravit-bog-startsy-pskovo-pecherskogo-monastyrya-o-promysle-bozhiyem',
+        },
+        {
+            name: 'МОЛИТВА ВСЕ ИСПРАВИТ. СТАРЦЫ ПСКОВО-ПЕЧЕРСКОГО МОНАСТЫРЯ О МОЛИТВЕ',
+            picture: 'books/10.jpg',
+            link: 'https://vsbook.ru/shop/product/molitva-vse-ispravit-startsy-pskovo-pecherskogo-monastyrya',
+        },        
+        {
+            name: 'РАССУЖДАЙ И ДЕЙСТВУЙ. СТАРЦЫ ПСКОВО-ПЕЧЕРСКОГО МОНАСТЫРЯ О РАССУЖДЕНИИ',
+            picture: 'books/04.jpg',
+            link: 'https://vsbook.ru/shop/product/rassuzhdai-i-deistvui-startsy-pskovo-pecherskogo-monastyrya',
+        },
+        {
+            name: 'УЧИТЕСЬ СОХРАНЯТЬ СЕМЬЮ. СТАРЦЫ ',
+            picture: 'books/11.jpg',
+            link: 'https://vsbook.ru/shop/product/uchites-sohranyat-semyu-starcy-pskovo-pecherskogo-monastyrya-o-semejnoj-zhiznii',
+        },
+        {
+            name: 'БЕССИЛЬНО ЗЛО, МЫ ВЕЧНЫ, С НАМИ БОГ! СТАРЦЫ',
+            picture: 'books/12.jpg',
+            link: 'https://vsbook.ru/shop/product/bessilno-zlo-my-vechny-s-nami-bog-starcy-pskovo-pecherskogo-monastyrya-ob-unynii',
+        },        
+        {
+            name: 'ВСЕ ВЫ В СЕРДЦЕ МОЕМ, И ЭТА ЛЮБОВЬ НАВЕЧНО. ВОСПОМИНАНИЕ ОДНОЙ СЕМЬИ ОБ АРХИМАНДРИТЕ ИОАННЕ (КРЕСТЬЯНКИНЕ)',
+            picture: 'books/13.jpg',
+            link: 'https://vsbook.ru/shop/product/vse-vy-v-serdtse-moyem-i-eta-lyubov-navechno-vospominaniye-odnoy-semi-ob-arkhimandrite-ioanne-krestyankine',
+        },
+        {
+            name: 'ПИСЬМА АРХИМАНДРИТА ИОАННА (КРЕСТЬЯНКИНА)',
+            picture: 'books/14.jpg',
+            link: 'https://vsbook.ru/shop/product/pisma-arkhimandrita-ioanna-krestyankina',
+        },
+
+    ],
+    extraBooks: [
+        {
+            name: 'ОПЫТ ПОСТРОЕНИЯ ИСПОВЕДИ',
+            picture: 'books/s1.jpg',
+            link: 'https://vsbook.ru/shop/product/opyt-postroyeniya-ispovedi',
+        },
+        {
+            name: 'МОЛИТВОСЛОВ С ПОУЧЕНИЯМИ АРХИМАНДРИТА ИОАННА (КРЕСТЬЯНКИНА).',
+            picture: 'books/s2.jpg',
+            link: 'https://vsbook.ru/shop/product/molitvoslov-s-kommentariyami-arhimandrita-ioanna-krestyankina',
+        },
+        {
+            name: 'О НЕСЕНИИ КРЕСТА',
+            picture: 'books/s3.jpg',
+            link: 'https://vsbook.ru/shop/product/o-nesenii-kresta',
+        },
+        {
+            name: 'ЦЕЛЬ ЖИЗНИ ХРИСТИАНИНА',
+            picture: 'books/s4.jpg',
+            link: 'https://vsbook.ru/shop/product/tsel-zhizni-khristianina',
+        },
+        {
+            name: 'МОЛИТВЫ К АРХАНГЕЛАМ',
+            picture: 'books/s5.jpg',
+            link: 'https://vsbook.ru/shop/product/molitvy-k-arkhangelam',
+        },
+        {
+            name: 'О СЕМИ ГОРЯЧНОСТЯХ ДУХА',
+            picture: 'books/s6.jpg',
+            link: 'https://vsbook.ru/shop/product/o-semi-goryachnostyakh-dukha',
+        },
+        {
+            name: 'МЫСЛИ О ЛЮБВИ',
+            picture: 'books/s7.jpg',
+            link: 'https://vsbook.ru/shop/product/mysli-o-lyubvi',
         }
     ]
 };

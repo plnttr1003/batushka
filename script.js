@@ -4,6 +4,7 @@ var citeBlock = document.querySelectorAll('.timeline-cite-span');
 var blockBooks = document.querySelector('.block.books');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
+var smallBooksContent = document.querySelector('.small-books-content');
 var bookRightArrow = document.querySelector('.books-arrow-right');
 var bookLeftArrow = document.querySelector('.books-arrow-left');
 var mainSvg = null;
@@ -154,6 +155,14 @@ var renderBooks = function() {
         booksContent.appendChild(bookItem);
         bookItems.push(bookItem);
     });
+
+    data.extraBooks.forEach(function(book) {
+        var bookImg = createImg(book.picture, 'book-picture');
+        var bookItem = createElement(book.name || '', 'book-item', 'book-name', {type: 'a', attrs: [['href', book.link], ['target', '_blank']]});
+
+        bookItem.appendChild(bookImg);
+        smallBooksContent.appendChild(bookItem);
+    });
 };
 
 var calcBooksContainer = function() {
@@ -281,11 +290,6 @@ window.addEventListener('scroll', function() {
         }
         if (top < 100 && top > (- nextTop)) {
             periodCont.classList.add('fixed');
-            var periodContId = periodCont.dataset.id;
-
-            if (periodContId) {
-                // document.getElementById(periodContId).classList.add('active-icon');
-            }
         } else {
             periodCont.classList.remove('fixed');
         }
