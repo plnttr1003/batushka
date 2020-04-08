@@ -94,7 +94,7 @@ data = {
                     id: 'spas-chekriak',
                     svg: 'orel/spas-chekriak_2.svg',
                     style: 'transform: translate(667px, 864px) scale(0.08);',
-                    poster: 'poster/orel.jpg'
+                    poster: 'poster/spas-chekriak.jpg'
                 }
             },
             {
