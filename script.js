@@ -1,6 +1,7 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
 var citeBlock = document.querySelector('.timeline-cite-span');
+var blockBooks = document.querySelector('.block.books');
 var timelineCite = document.querySelector('.timeline-cite');
 var booksContent = document.querySelector('.books-content');
 var bookRightArrow = document.querySelector('.books-arrow-right');
@@ -245,12 +246,13 @@ window.addEventListener('resize', function () {
 });
 
 window.addEventListener('scroll', function() {
+    var blockBooksTop = blockBooks.getBoundingClientRect().top;
     var activeDate = true;
-    /*if (timelineBlock.getBoundingClientRect().bottom < 0) {
-        timelineCite.style.display = 'none';
+    if (blockBooksTop > 0) {
+        timelineCite.classList.remove('fixed');
     }  else {
-        timelineCite.style.display = 'flex';
-    }*/
+        timelineCite.classList.add('fixed');
+    }
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
@@ -328,5 +330,5 @@ window.addEventListener('scroll', function() {
                 })
             }
         }
-    })
+    });
 });
