@@ -40,7 +40,13 @@
 
 @media (min-width: 520px) {
     .letters {
-        min-height: 726px;
+        min-height: 830px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .letters {
+        max-height: 830px;
     }
 }
 
@@ -97,6 +103,7 @@
 @media (min-width: 1200px) {
     .letters-container {
         transform: scale(1.2);
+        transform-origin: 50%;
     }
 }
 
