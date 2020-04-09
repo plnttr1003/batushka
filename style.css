@@ -22,6 +22,8 @@ body {
     position: relative;
 }
 
+
+
 .timeline .period-title {
     font-size: 28px;
     line-height: 40px;
@@ -31,6 +33,12 @@ body {
     margin-bottom: 50px;
 }
 
+@media (max-width: 520px) {
+    .timeline .period-title {
+        width: calc(100vw - 20px);
+    }
+}
+
 .period-date {
     width: 30vw;
     padding-right: 20px;
@@ -38,12 +46,23 @@ body {
     height: 90px;
 }
 
+@media (max-width: 520px) {
+    .period-date {
+        padding-bottom: 20px;
+    }
+}
+
 .period-date.fixed .period-title {
     position: fixed;
     top: 100px;
-    width: calc(30vw - 40px);
     z-index: 1;
     text-shadow: 0 0 20px #fff;
+}
+
+@media (min-width: 520px) {
+    .period-date.fixed .period-title {
+        width: calc(30vw - 40px);
+    }
 }
 
 .period-date:first-child {
@@ -70,11 +89,18 @@ body {
     margin-left: 20px;
     font-style: italic;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 23px;
     text-align: left;
     color: #525252;
     transition: opacity 0.2s ease;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media (min-width: 520px) {
+    .timeline .date-block .extra-text {
+        font-size: 16px;
+        line-height: 23px;
+    }
 }
 
 .timeline .date-block .date {
@@ -86,12 +112,19 @@ body {
     padding-bottom: 40px;
     flex: 0 0 30vw;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 20px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     position: relative;
+}
+
+@media (min-width: 520px) {
+    .timeline .date-block .date {
+        font-size: 20px;
+        line-height: 23px;
+    }
 }
 
 .timeline .date-block .date:after {
@@ -124,17 +157,30 @@ body {
     padding-left: 16px;
     padding-top: 20px;
     padding-bottom: 40px;
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 19px;
     display: flex;
     text-shadow: 0 0 5px #fff;
+}
+@media (min-width: 520px) {
+    .timeline .date-block .text {
+        font-size: 17px;
+        line-height: 20px;
+    }
 }
 
 .timeline .date-block.featured .text {
     font-weight: 500;
-    font-size: 23px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 26px;
     padding-top: 15px;
+}
+
+@media (min-width: 520px) {
+    .timeline .date-block.featured .text {
+        font-size: 23px;
+        line-height: 30px;
+    }
 }
 
 .timeline .date-block.active-date .date:after {
@@ -166,8 +212,14 @@ body {
     z-index: 4;
     position: relative;
     pointer-events: none;
+    padding-right: 4px;
 }
 
+@media (max-width: 520px) {
+    .timeline-main {
+        padding-right: 0;
+    }
+}
 .timeline-cite {
     top: 0;
     right: 0;
@@ -189,17 +241,27 @@ body {
     height: auto;
 }
 
+
 .timeline-cite-text {
-    padding: 26px 20px 26px 60px;
+    padding: 26px 20px 26px 41px;
     font-style: italic;
     position: relative;
-    background: url(images/cite.svg) 8px 17px no-repeat;
-    background-size: 35px;
+    background: url(images/cite.svg) 8px 15px no-repeat;
+    background-size: 25px;
     font-family: 'Batushka', Times, serif;
-    font-size: 35px;
-    line-height: 35px;
+    font-size: 19px;
+    line-height: 20px;
     color: white;
     display: flex;
+}
+@media (min-width: 520px) {
+    .timeline-cite-text {
+        padding: 26px 20px 26px 60px;
+        background: url(images/cite.svg) 8px 17px no-repeat;
+        background-size: 35px;
+        font-size: 35px;
+        line-height: 35px;
+    }
 }
 
 .timeline-cite-span {
@@ -210,11 +272,17 @@ body {
     margin-top: -30px;
 }
 
+@media (max-width: 520px) {
+    .extra-text {
+        margin-top: 0px;
+    }
+}
+
 .date-picture {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-size: cover;
-    flex: 0 0 50px;
+    flex: 0 0 40px;
     margin-right: 12px;
     border-radius: 100%;
     transform: translate(0, -12px);
@@ -223,6 +291,15 @@ body {
     z-index: 100;
     pointer-events: all;
     transition: transform 0.2s ease;
+}
+
+@media (min-width: 520px) {
+    .date-picture {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        flex: 0 0 50px;
+    }
 }
 
 .date-picture:hover {
