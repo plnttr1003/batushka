@@ -316,7 +316,6 @@ window.addEventListener('scroll', function() {
 
         if ((top > windowHeight / 2 - 100) && (top < windowHeight / 2 + 100) && activeDate) {
             dataBlock.classList.add('active-date');
-            console.log('dataBlock::', dataBlock);
             activeDate = false;
             if (dataBlock.dataset.iconId) {
                 svgIcons.forEach(function(svgIcon) {
