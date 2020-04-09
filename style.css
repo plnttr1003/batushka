@@ -369,6 +369,7 @@ body {
     max-width: 310px;
     height: 100%;
     width: 100%;
+    display: flex;
 }
 
 .footer-container > div {
@@ -384,7 +385,6 @@ body {
 @media (min-width: 1160px) {
     .footer-container {
         max-width: 1110px;
-        display: flex;
     }
 }
 
