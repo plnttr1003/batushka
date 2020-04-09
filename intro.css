@@ -60,8 +60,16 @@
     left: -81px;
     height: 371px;
     width: 265px;
-    background: url(images/01.png) 50% no-repeat;
+    background: url(images/01-1.jpg) 50% no-repeat;
     background-size: contain;
+    mask: url(images/01-mask.png);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: 50%;
+    -webkit-mask: url(images/01-mask.png);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 50%;
 }
 
 @media (min-width: 520px) {
