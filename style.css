@@ -257,6 +257,7 @@ body {
     line-height: 20px;
     color: white;
     display: flex;
+    position: absolute;
 }
 @media (min-width: 520px) {
     .timeline-cite-text {
