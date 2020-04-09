@@ -360,4 +360,68 @@ body {
     background-position: 40%;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    max-width: 310px;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-container > div {
+    padding: 19px 0;
+}
+
+@media (min-width: 520px) {
+    .footer-container {
+        max-width: 520px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .footer-container {
+        max-width: 1110px;
+        display: flex;
+    }
+}
+
+.footer-container .logo a {
+    width: 85px;
+    height: 85px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+.footer-container .ppm .logo a {
+    background-image: url('/logo/ppm.svg');
+    width: 57px;
+}
+
+.footer-container .ppm {
+    margin-right: 20px;
+}
+
+.footer-container .vs .logo a {
+    background-image: url('/logo/vs.svg');
+    width: 94px;
+}
+
+.footer-container .soc {
+    margin-top: 6px;
+    text-align: center;
+}
+
+.footer-container .soc a {
+    font-family: social;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-container a:hover {
+    opacity: 0.8;
 }

@@ -53,3 +53,11 @@
     font-style: normal;
     font-weight: normal;
 }
+
+@font-face {
+    font-family: "social";
+    src: url("fonts/social.woff2") format("woff2"),
+    url("fonts/social.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
