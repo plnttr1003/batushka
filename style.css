@@ -435,3 +435,32 @@ body {
 .footer-container a:hover {
     opacity: 0.8;
 }
+
+@media (min-width: 1160px) {
+    .footer-container .ppm,
+    .footer-container .vs {
+        flex-direction: row;
+        display: flex;
+        align-items:center;
+    }
+
+    .footer-container .vs .logo a {
+
+    }
+
+    .footer-container .vs .logo a {
+        width: 179px;
+        margin-left: 16px;
+    }
+
+    .footer-container .ppm .logo a {
+        height: 115px;
+    }
+    .footer-container .soc {
+        margin-left: 20px;
+    }
+    .footer-container .soc a {
+        font-size: 33px;
+        margin-right: 6px;
+    }
+}
