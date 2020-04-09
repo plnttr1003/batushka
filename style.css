@@ -361,14 +361,20 @@ body {
     background-attachment: fixed;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
+@media (min-width: 1160px) {
+    .block.footer {
+        justify-content: center;
+    }
+}
+
 .footer-container {
-    max-width: 310px;
+    /* max-width: 310px; */
     height: 100%;
-    width: 100%;
+    padding: 0 20px;
     display: flex;
 }
 
@@ -378,13 +384,14 @@ body {
 
 @media (min-width: 520px) {
     .footer-container {
-        max-width: 520px;
+        /* max-width: 520px; */
     }
 }
 
 @media (min-width: 1160px) {
     .footer-container {
         max-width: 1110px;
+        width: 100%;
     }
 }
 
@@ -393,34 +400,36 @@ body {
     height: 85px;
     display: block;
     background-repeat: no-repeat;
-    background-position: 0 50%;
+    background-position: 70% 50%;
 }
 
 .footer-container .ppm .logo a {
     background-image: url('logo/ppm.svg');
-    width: 57px;
+    width: 90px;
 }
 
 .footer-container .ppm {
-    margin-right: 20px;
+    margin-right: 26px;
 }
 
 .footer-container .vs .logo a {
     background-image: url('logo/vs.svg');
     width: 94px;
-    background-position: 50% 69%;
+    background-position: 65% 68%;
 }
 
 .footer-container .soc {
     margin-top: 6px;
     text-align: center;
+    margin-left: 13px;
 }
 
 .footer-container .soc a {
     font-family: social;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 23px;
+    margin-right: 3px;
 }
 
 .footer-container a:hover {
