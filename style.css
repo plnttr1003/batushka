@@ -397,7 +397,7 @@ body {
 }
 
 .footer-container .ppm .logo a {
-    background-image: url('/logo/ppm.svg');
+    background-image: url('logo/ppm.svg');
     width: 57px;
 }
 
@@ -406,8 +406,9 @@ body {
 }
 
 .footer-container .vs .logo a {
-    background-image: url('/logo/vs.svg');
+    background-image: url('logo/vs.svg');
     width: 94px;
+    background-position: 50% 69%;
 }
 
 .footer-container .soc {
