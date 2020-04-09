@@ -4,6 +4,10 @@
     outline: none;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 html,
 body {
     width: 100%;
