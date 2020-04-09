@@ -249,7 +249,6 @@ body {
 .timeline-cite-text {
     padding: 26px 20px 26px 41px;
     font-style: italic;
-    position: relative;
     background: url(images/cite.svg) 8px 15px no-repeat;
     background-size: 25px;
     font-family: 'Batushka', Times, serif;
