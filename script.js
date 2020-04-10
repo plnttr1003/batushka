@@ -308,7 +308,7 @@ window.addEventListener('scroll', function() {
             dataBlock.classList.remove('date-block-hidden');
         }
 
-        if ((top > windowHeight / 2 - 400) && (top < windowHeight / 2 + 400) && activeDate) {
+        if ((top > windowHeight / 2 - 300) && (top < windowHeight / 2 + 300) && activeDate) {
             dataBlock.classList.add('active-date');
             activeDate = false;
             if (dataBlock.dataset.iconId) {
