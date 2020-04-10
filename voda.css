@@ -50,7 +50,16 @@
     height: 100%;
     text-align: right;
 }
-
+@media (max-aspect-ratio: 2/3) {
+    .popup-overlay.right .popup-content {
+        display: flex;
+        align-items: center;
+    }
+    .popup-overlay.right .popup-content img {
+        width: 100%;
+        height: auto!important;
+    }
+}
 .popup-overlay.center .popup-content {
     height: 100%;
     width: 100%;
