@@ -256,13 +256,7 @@ window.addEventListener('resize', function () {
 });
 
 window.addEventListener('scroll', function() {
-    var blockBooksTop = blockBooks.getBoundingClientRect().top;
     var activeDate = true;
-    /* if (blockBooksTop > 0) {
-        timelineCite.classList.remove('fixed');
-    }  else {
-        timelineCite.classList.add('fixed');
-    } */
 
     extraTexts.forEach(function (extraText) {
         var top = extraText.getBoundingClientRect().top;
@@ -320,7 +314,7 @@ window.addEventListener('scroll', function() {
             if (dataBlock.dataset.iconId) {
                 svgIcons.forEach(function(svgIcon) {
                     if (svgIcon.getAttribute('id') === dataBlock.dataset.iconId) {
-                        svgIcon.classList.add('active-icon');
+                        svgIcon.classList.add('active-icon', 'shown-icon');
                     }
                 })
             }
@@ -336,3 +330,7 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};

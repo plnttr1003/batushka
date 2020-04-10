@@ -136,6 +136,15 @@ g#icos g:hover .st4 {
     stroke: #522810;
 }
 
+.timeline-icon {
+    opacity: 0;
+    transition: opacity ease 3s;
+}
+
+.shown-icon {
+    opacity: 1;
+}
+
 .active-icon .st4 {
     fill: rgba(82, 40, 16, 0.9);
     stroke: rgba(0, 0, 0, 0.45);
