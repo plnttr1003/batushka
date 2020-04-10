@@ -28,7 +28,7 @@ var render = function() {
     renderCite();
     renderBooks();
     calcBooksContainer();
-    setInterval(renderCite, 15000);
+    setInterval(renderCite, 25000);
 };
 
 var renderTimeline = function (params) {
