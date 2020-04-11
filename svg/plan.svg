@@ -6,7 +6,7 @@
 <stop offset="100%" stop-color="#000000"/>
 </linearGradient>
 
-<image id="plan_jpg" x="0" y="0" width="2000" height="970" xlink:href="../images/plan.jpg"/>
+<image id="plan_jpg" x="0" y="0" width="2000" height="970" xlink:href="/images/plan.jpg"/>
 
 <filter id="Filter_1" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
 <feColorMatrix in="SourceGraphic" type="matrix" values="0.40832362534682315 0.5073668490362969 0.08430952561688002 0 -0.054901960784313725 0.2647271609800748 0.6699509087556145 0.06532193026431075 0 -0.054901960784313725 0.2501454403542372 0.5297882044072086 0.2200663552385543 0 -0.05490196078431373 0 0 0 1 0 " result="result1"/>
