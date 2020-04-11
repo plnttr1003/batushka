@@ -1,0 +1,55 @@
+.hallplan {
+	z-index: 6;
+	position: relative;
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.14) 70%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.hallplan-svg {
+	justify-content: center;
+	align-items: center;
+	padding: 80px 0 10px;
+}
+
+.hallplan svg {
+	width: 80%;
+	max-width: 2000px;
+	height: auto;
+}
+
+.hall-background {
+	pointer-events: none;
+}
+
+.hall-color {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.hall-text {
+	pointer-events: none;
+}
+
+.hall-hover {
+	cursor: pointer;
+}
+
+.hall-hover.hall-1:hover ~ .hall-color.hall-1 {
+	opacity:1;
+}
+
+.hall-hover.hall-2:hover ~ .hall-color.hall-2 {
+	opacity:1;
+}
+
+.hall-hover.hall-3:hover ~ .hall-color.hall-3 {
+	opacity:1
+}
+
+.hall-hover.hall-4:hover ~ .hall-color.hall-4 {
+	opacity:1;
+}
+
+.hall-hover.hall-5:hover ~ .hall-color.hall-5 {
+	opacity:1;
+}

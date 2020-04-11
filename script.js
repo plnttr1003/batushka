@@ -1,5 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
+var hallPlanSvg = document.querySelector('.hallplan-svg');
 var citeBlock = document.querySelectorAll('.timeline-cite-span');
 var booksContent = document.querySelector('.books-content');
 var smallBooksContent = document.querySelector('.small-books-content');
@@ -23,6 +24,7 @@ var periodDateScroll = [];
 
 var render = function() {
     renderSVG({file: 'map_2-1.svg', container: timelineMap, fn: renderTimeline});
+    renderSVG({file: 'plan.svg', container: hallPlanSvg});
     renderCite();
     renderBooks();
     calcBooksContainer();
