@@ -5,19 +5,40 @@
 }
 
 .letters-columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
     max-width: 1600px;
+    vertical-align: top;
+    columns: 5 8em;
+}
+
+@media (min-width: 520px) {
+    .letters-columns {
+        columns: 5 14em;
+    }
+}
+
+@media (min-width: 1300px) {
+    .letters-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        max-width: 1600px;
+    }
 }
 
 .letter-column {
-    width: 20%;
+    display: inline-block;
     margin: 40px 1.2vw;
     background: rgba(212, 209, 120, 0.23);
     padding: 0 10px;
-    min-width: 192px;
+}
+
+@media (min-width: 1300px) {
+    .letter-column {
+        width: 20%;
+        min-width: 192px;
+    }
 }
 
 .letter-column a {
