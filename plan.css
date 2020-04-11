@@ -1,20 +1,116 @@
 .hallplan {
 	z-index: 6;
 	position: relative;
-	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.14) 70%, rgba(255, 255, 255, 0.7) 100%);
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.hallplan-title {
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 50px 0 50px 20px;
+}
+
+.hallplan-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+@media (max-width: 520px) {
+	.hallplan-container {
+		flex-direction: column;
+	}
 }
 
 .hallplan-svg {
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	padding: 80px 0 10px;
+	margin-right: 80px;
+}
+
+@media (max-width: 520px) {
+	.hallplan-svg {
+		justify-content: center;
+		margin: 0;
+		width: 100%;
+	}
+}
+
+.hallplan-text {
+	width: 50%;
+}
+
+@media (max-width: 520px) {
+	.hallplan-text {
+		transform: none;
+		margin: 21px 20px 40px;
+		width: auto;
+		order: 0;
+	}
+
+	.hallplan-text-hall-title {
+		display: none;
+	}
+}
+
+.hallplan-text-hall-name {
+	font-size: 16px;
+	line-height: 20px;
+	margin: 10px 0 10px;
+}
+
+@media (min-width: 520px) {
+	.hallplan-text-hall-name {
+		font-size: 19px;
+		line-height: 24px;
+		margin: 10px 0 30px;
+	}
+}
+.hallplan-text-hall-name span:nth-child(1) {
+	font-weight: normal;
+}
+
+
+.hallplan-text-hall-name span:nth-child(2) {
+	font-weight: 500;
+}
+
+
+.hall-annotations {
+	margin-bottom: 30px;
+	opacity: 0;
+	display: none;
+}
+
+@media (max-width: 520px) {
+	.hall-annotations {
+		display: none;
+	}
+}
+
+
+.hall-circle {
+	pointer-events: none;
 }
 
 .hallplan svg {
-	width: 80%;
-	max-width: 2000px;
+	width: 40vw;
 	height: auto;
+	margin-left: 20px;
+	max-width: 700px;
 }
+
+@media (max-width: 520px) {
+	.hallplan svg {
+		width: 100%;
+		max-width: auto;
+		margin: 0 20px;
+		height: auto;
+	}
+}
+
 
 .hall-background {
 	pointer-events: none;
@@ -52,4 +148,8 @@
 
 .hall-hover.hall-5:hover ~ .hall-color.hall-5 {
 	opacity:1;
+}
+
+.hall-stair {
+	opacity: 0.6;
 }

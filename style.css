@@ -98,12 +98,14 @@ body {
     transition: opacity 0.2s ease;
     font-size: 14px;
     line-height: 20px;
+    display: none;
 }
 
 @media (min-width: 520px) {
     .timeline .date-block .extra-text {
         font-size: 16px;
         line-height: 23px;
+        display: block;
     }
 }
 

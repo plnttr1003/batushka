@@ -24,7 +24,7 @@ var periodDateScroll = [];
 
 var render = function() {
     renderSVG({file: 'map_2-1.svg', container: timelineMap, fn: renderTimeline});
-    renderSVG({file: 'plan.svg', container: hallPlanSvg});
+    renderSVG({file: 'hallplan.svg', container: hallPlanSvg});
     renderCite();
     renderBooks();
     calcBooksContainer();
