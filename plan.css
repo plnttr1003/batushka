@@ -113,7 +113,7 @@
 	margin: 0 -10px;
 	box-shadow: -1px 4px 7px 7px #00000061;
 	transition: opacity 0.3s ease;
-	background: #fff url(images/cross.svg) top 10px right 10px no-repeat;
+	background: #fff url(images/cross.svg) top 12px right 12px no-repeat;
 	background-size: 20px;
 	z-index: 1;
 }

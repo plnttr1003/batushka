@@ -1,5 +1,6 @@
 var timelineBlock = document.querySelector('.timeline-main');
 var timelineMap = document.querySelector('.timeline-map-background');
+var timelineMain = document.querySelector('.timeline-main');
 var hallPlanSvg = document.querySelector('.hallplan-svg');
 var citeBlock = document.querySelectorAll('.timeline-cite-span');
 var booksContent = document.querySelector('.books-content');
@@ -22,14 +23,16 @@ var svgIcons = [];
 var windowHeight = 0;
 var minOffsetHeight = 0;
 var periodDateScroll = [];
+var citeInterval;
 
 var render = function() {
     renderSVG({file: 'map_2-1.svg', container: timelineMap, fn: renderTimeline});
     renderSVG({file: 'hallplan.svg', container: hallPlanSvg, fn: addHallPlanListener});
     renderCite();
+    citeListener();
     renderBooks();
     calcBooksContainer();
-    setInterval(renderCite, 25000);
+    citeInterval = setInterval(renderCite, 25000);
 };
 
 var renderTimeline = function (params) {
@@ -63,8 +66,19 @@ var renderTitle = function (period) {
 };
 
 var renderCite = function () {
-    citeBlock[0].innerText = data.citates[getRandomInt(0, data.citates.length)]
-    citeBlock[1].innerText = data.citates[getRandomInt(0, data.citates.length)]
+    citeBlock[0].innerText = data.citates[getRandomInt(0, data.citates.length)];
+    citeBlock[1].innerText = data.citates[getRandomInt(0, data.citates.length)];
+};
+
+var citeListener = function () {
+    citeBlock[0].addEventListener('click', rerenderCite);
+    citeBlock[1].addEventListener('click', rerenderCite);
+};
+
+var rerenderCite = function () {
+    clearInterval(citeInterval);
+    renderCite();
+    citeInterval = setInterval(renderCite, 25000);
 };
 
 var renderDate = function(data) {
@@ -346,6 +360,16 @@ window.addEventListener('resize', function () {
 });
 
 window.addEventListener('scroll', function() {
+
+    var timelineTop = timelineMain.getBoundingClientRect().top;
+
+    if (timelineTop > 100) {
+        timelineMap.style.opacity = 0;
+    } else {
+        timelineMap.style.opacity = 1;
+    }
+
+
     var activeDate = true;
 
     extraTexts.forEach(function (extraText) {

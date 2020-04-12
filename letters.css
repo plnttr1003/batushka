@@ -275,3 +275,36 @@
 .letter-column a.letter-hidden {
     display: none;
 }
+
+/* ================= */
+
+.letters-container.only-text {
+    position: absolute;
+    z-index: 10;
+}
+
+.letters-container.only-text div {
+    visibility: hidden;
+}
+
+.letters-container.only-text .letters-text {
+    visibility: visible;
+}
+
+
+.letters-container.only-text {
+    position: absolute;
+    z-index: 10;
+}
+
+.letters-container.only-text div {
+    visibility: hidden;
+}
+
+.letters-container.only-text .letters-text {
+    visibility: visible;
+}
+
+.letters-container.not-text .letters-text  {
+    visibility: hidden;
+}

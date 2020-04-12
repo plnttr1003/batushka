@@ -401,12 +401,6 @@ data = {
                 extraText: 'Освободившись из\u00A0лагеря, отец Иоанн, как и\u00A0все бывшие заключенные, был «лишенцем». «Лишенцам» запрещалось проживать в\u00A0больших городах и\u00A0вблизи границы Советского Союза.',
                 picture: '',
                 featured: true,
-                icon: {
-                    id: 'pechory',
-                    svg: 'pskov/pskovo-pechorskiy_2.svg',
-                    style: 'transform: translate(334px, 464px) scale(0.10);}',
-                    poster: 'poster/pechory.jpg'
-                }
             },
             {
                 date: null,
@@ -584,6 +578,12 @@ data = {
                 picture: '30.jpg',
                 popupPicture: '30-big.jpg',
                 featured: true,
+                icon: {
+                    id: 'pechory',
+                    svg: 'pskov/pskovo-pechorskiy_2.svg',
+                    style: 'transform: translate(334px, 464px) scale(0.10);}',
+                    poster: 'poster/pechory.jpg'
+                }
             },
             {
                 date: '1968',
