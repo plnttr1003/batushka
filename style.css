@@ -240,10 +240,11 @@ body {
     justify-content: center;
     height: 100%;
     align-items: center;
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .timeline-cite.fixed {

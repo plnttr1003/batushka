@@ -8,6 +8,9 @@ var smallBooksContent = document.querySelector('.small-books-content');
 var bookRightArrow = document.querySelector('.books-arrow-right');
 var bookLeftArrow = document.querySelector('.books-arrow-left');
 var mainSvg = null;
+var menuContainer = document.querySelector('.menu');
+var menuButton = document.querySelector('.menu-button');
+var menuNavButtons = document.querySelectorAll('.menu-nav');
 var hall = [];
 
 var dateBlocks = [];
@@ -32,6 +35,7 @@ var render = function() {
     citeListener();
     renderBooks();
     calcBooksContainer();
+    menuListeners();
     citeInterval = setInterval(renderCite, 25000);
 };
 
@@ -71,8 +75,8 @@ var renderCite = function () {
 };
 
 var citeListener = function () {
-    citeBlock[0].addEventListener('click', rerenderCite);
-    citeBlock[1].addEventListener('click', rerenderCite);
+    citeBlock[0].parentNode.parentNode.addEventListener('click', rerenderCite);
+    citeBlock[1].parentNode.parentNode.addEventListener('click', rerenderCite);
 };
 
 var rerenderCite = function () {
@@ -309,7 +313,7 @@ var addHallPlanListener = function() {
         });
 
 
-        hallEl.name.addEventListener('click', function () {
+        hallEl.name.addEventListener('click', function() {
             hall.forEach(function(extHallEl) {
                 if (extHallEl.annotations) {
                     extHallEl.annotations.classList.remove('hall-annotations-visible');
@@ -320,7 +324,7 @@ var addHallPlanListener = function() {
             }
         });
 
-        hallEl.svgHover.addEventListener('click', function () {
+        hallEl.svgHover.addEventListener('click', function() {
             hall.forEach(function(extHallEl) {
                 if (extHallEl.annotations) {
                     extHallEl.annotations.classList.remove('hall-annotations-visible');
@@ -330,7 +334,7 @@ var addHallPlanListener = function() {
                 hallEl.annotations.classList.add('hall-annotations-visible');
             }
         });
-    })
+    });
 
 
     hall.forEach(function(extHallEl) {
@@ -340,6 +344,18 @@ var addHallPlanListener = function() {
             })
         }
     });
+};
+
+var menuListeners = function() {
+    menuNavButtons.forEach(function(menuNavButton) {
+        menuNavButton.addEventListener('click', function() {
+            menuContainer.classList.remove('show-menu');
+        })
+    });
+
+    menuButton.addEventListener('click', function() {
+        menuContainer.classList.toggle('show-menu');
+    })
 };
 
 document.addEventListener("DOMContentLoaded", function() {

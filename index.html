@@ -26,9 +26,37 @@
     <link rel="stylesheet" href="voda.css?v=4">
     <link rel="stylesheet" href="books.css?v=4">
     <link rel="stylesheet" href="plan.css?v=4">
+    <link rel="stylesheet" href="menu.css?v=5">
 </head>
 <body id="blue">
-    <div class="intro">
+    <div class="menu">
+        <div class="menu-button">
+            <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 129.6 118.7" enable-background="new 0 0 129.6 118.7" xml:space="preserve">
+                <g>
+                	<path stroke="#C4C4C4" stroke-miterlimit="10" d="M122.9,14.1H6.7c-3,0-5.4-2.9-5.4-6.4s2.4-6.4,5.4-6.4h116.2c3,0,5.4,2.9,5.4,6.4
+                		S125.8,14.1,122.9,14.1z"/>
+                </g>
+                                <g>
+                	<path stroke="#C4C4C4" stroke-miterlimit="10" d="M122.9,117.4H6.7c-3,0-5.4-2.9-5.4-6.4c0-3.5,2.4-6.4,5.4-6.4h116.2
+                		c3,0,5.4,2.9,5.4,6.4C128.3,114.5,125.8,117.4,122.9,117.4z"/>
+                </g>
+                                <g>
+                	<path stroke="#C4C4C4" stroke-miterlimit="10" d="M122.9,65.8H6.7c-3,0-5.4-2.9-5.4-6.4s2.4-6.4,5.4-6.4h116.2c3,0,5.4,2.9,5.4,6.4
+                		S125.8,65.8,122.9,65.8z"/>
+                </g>
+            </svg>
+        </div>
+        <div class="menu-nav-buttons">
+            <a href="#top" class="menu-nav">Наверх</a>
+            <a href="#plan" class="menu-nav">План выставки</a>
+            <a href="#timeline" class="menu-nav">Временная лента</a>
+            <a href="#letters" class="menu-nav">Письма</a>
+            <a href="#video" class="menu-nav">Видеозаписи</a>
+            <a href="#books" class="menu-nav">Книги</a>
+        </div>
+    </div>
+    <div class="intro" id="top">
         <div class="container">
             <div class="image_block"></div>
         </div>
@@ -48,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="hallplan">
+    <div class="hallplan" id="plan">
         <div class="hallplan-title">
             Программа выставки
         </div>
@@ -72,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div class="timeline">
+    <div class="timeline" id="timeline">
         <div class="timeline-main"></div>
         <div class="timeline-map">
             <div class="timeline-map-svg timeline-map-background"></div>
@@ -86,7 +114,7 @@
             <div class="timeline-cite-svg"></div>
         </div>
     </div>
-    <div class="block letters">
+    <div class="block letters" id="letters">
         <div class="letters-container only-text">
             <div class="letters-title"><span>Письма архимандрита Иоанна</span><br><span>(Крестьянкина)</span></div>
             <div class="letters-content">
@@ -220,7 +248,7 @@
             </div>
         </div>
     </div>
-    <div class="block video">
+    <div class="block video" id="video">
         <video controls src="video/video.mp4"></video>
     </div>
     <div class="half-block pre-letters">
@@ -231,7 +259,7 @@
             <div class="timeline-cite-svg"></div>
         </div>
     </div>
-    <div class="block books">
+    <div class="block books" id="books">
         <div class="books-container">
             <div class="books-arrow books-arrow-left"></div>
             <div class="books-arrow books-arrow-right"></div>
