@@ -7,6 +7,7 @@ var smallBooksContent = document.querySelector('.small-books-content');
 var bookRightArrow = document.querySelector('.books-arrow-right');
 var bookLeftArrow = document.querySelector('.books-arrow-left');
 var mainSvg = null;
+var hall = [];
 
 var dateBlocks = [];
 var periodDates = [];
@@ -24,7 +25,7 @@ var periodDateScroll = [];
 
 var render = function() {
     renderSVG({file: 'map_2-1.svg', container: timelineMap, fn: renderTimeline});
-    renderSVG({file: 'hallplan.svg', container: hallPlanSvg});
+    renderSVG({file: 'hallplan.svg', container: hallPlanSvg, fn: addHallPlanListener});
     renderCite();
     renderBooks();
     calcBooksContainer();
@@ -235,6 +236,95 @@ var calcScrollValues = function() {
             viewbox: viewbox,
             ratios: ratios,
         })
+    });
+};
+
+var addHallPlanListener = function() {
+    hall = [
+        {
+            svgColor: document.querySelector('.hall-color.hall-1'),
+            svgHover: document.querySelector('.hall-hover.hall-1'),
+            name: document.querySelector('.hallplan-text-hall-name.hall-1'),
+            annotations: document.querySelector('.hall-annotations.hall-1'),
+        },
+        {
+            svgColor: document.querySelector('.hall-color.hall-2'),
+            svgHover: document.querySelector('.hall-hover.hall-2'),
+            name: document.querySelector('.hallplan-text-hall-name.hall-2'),
+            annotations: document.querySelector('.hall-annotations.hall-2'),
+        },
+        {
+            svgColor: document.querySelector('.hall-color.hall-3'),
+            svgHover: document.querySelector('.hall-hover.hall-3'),
+            name: document.querySelector('.hallplan-text-hall-name.hall-3'),
+            annotations: document.querySelector('.hall-annotations.hall-3'),
+        },
+        {
+            svgColor: document.querySelector('.hall-color.hall-4'),
+            svgHover: document.querySelector('.hall-hover.hall-4'),
+            name: document.querySelector('.hallplan-text-hall-name.hall-4'),
+        },
+        {
+            svgColor: document.querySelector('.hall-color.hall-5'),
+            svgHover: document.querySelector('.hall-hover.hall-5'),
+            name: document.querySelector('.hallplan-text-hall-name.hall-5'),
+        },
+    ];
+
+    hall.forEach(function(hallEl) {
+        hallEl.name.addEventListener('mouseover', function() {
+            console.log('>>>');
+            hall.forEach(function(extHallEl) {
+                extHallEl.svgColor.classList.remove('active-color-hall');
+            });
+            hallEl.svgColor.classList.add('active-color-hall');
+        });
+        hallEl.name.addEventListener('mouseout', function() {
+            hallEl.svgColor.classList.remove('active-color-hall');
+        });
+
+        hallEl.svgHover.addEventListener('mouseover', function() {
+            console.log('>ww>>');
+            hall.forEach(function(extHallEl) {
+                extHallEl.name.classList.remove('active-hall-name');
+            });
+            hallEl.name.classList.add('active-hall-name');
+        });
+        hallEl.svgHover.addEventListener('mouseout', function() {
+            hallEl.name.classList.remove('active-hall-name');
+        });
+
+
+        hallEl.name.addEventListener('click', function () {
+            hall.forEach(function(extHallEl) {
+                if (extHallEl.annotations) {
+                    extHallEl.annotations.classList.remove('hall-annotations-visible');
+                }
+            });
+            if (hallEl.annotations) {
+                hallEl.annotations.classList.add('hall-annotations-visible');
+            }
+        });
+
+        hallEl.svgHover.addEventListener('click', function () {
+            hall.forEach(function(extHallEl) {
+                if (extHallEl.annotations) {
+                    extHallEl.annotations.classList.remove('hall-annotations-visible');
+                }
+            });
+            if (hallEl.annotations) {
+                hallEl.annotations.classList.add('hall-annotations-visible');
+            }
+        });
+    })
+
+
+    hall.forEach(function(extHallEl) {
+        if (extHallEl.annotations) {
+            extHallEl.annotations.addEventListener('click', function() {
+                extHallEl.annotations.classList.remove('hall-annotations-visible');
+            })
+        }
     });
 };
 
