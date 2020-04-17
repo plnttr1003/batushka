@@ -281,11 +281,13 @@ var addHallPlanListener = function() {
             svgColor: document.querySelector('.hall-color.hall-4'),
             svgHover: document.querySelector('.hall-hover.hall-4'),
             name: document.querySelector('.hallplan-text-hall-name.hall-4'),
+            annotations: document.querySelector('.hall-annotations.hall-4'),
         },
         {
             svgColor: document.querySelector('.hall-color.hall-5'),
             svgHover: document.querySelector('.hall-hover.hall-5'),
             name: document.querySelector('.hallplan-text-hall-name.hall-5'),
+            annotations: document.querySelector('.hall-annotations.hall-5'),
         },
     ];
 

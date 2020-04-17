@@ -193,11 +193,6 @@
 	cursor: pointer;
 }
 
-.hall-hover.hall-4,
-.hall-hover.hall-5 {
-	cursor: default;
-}
-
 .hall-hover.hall-1:hover ~ .hall-color.hall-1 {
 	opacity:1;
 }
