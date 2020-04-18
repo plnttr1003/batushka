@@ -109,12 +109,6 @@
 	opacity: 1;
 }
 
-.hallplan-text-hall-name.hall-4,
-.hallplan-text-hall-name.hall-5 {
-	text-decoration: none!important;
-	cursor: default;
-}
-
 .hallplan-text-hall-name span:nth-child(1) {
 	opacity: 0.8;
 }
