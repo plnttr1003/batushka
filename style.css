@@ -354,11 +354,20 @@ body {
 
 .block.video {
     background: #000;
+    flex-flow: row wrap;
+    height: auto;
 }
 
 .block video {
     width: 100%;
-    height: 100vh;
+    height: 75vw;
+}
+
+@media (min-width: 800px) {
+    .block video {
+        width: 50%;
+        height: 38vw;
+    }
 }
 
 .block.footer {
