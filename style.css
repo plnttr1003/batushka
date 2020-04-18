@@ -219,6 +219,8 @@ body {
     position: relative;
     pointer-events: none;
     padding-right: 4px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 @media (max-width: 520px) {
