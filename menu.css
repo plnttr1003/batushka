@@ -73,13 +73,13 @@
 
 @media (min-width: 1035px) {
 	.menu-nav-buttons a {
-		margin: 4px 40px;
+		margin: 4px 30px;
 	}
 }
 
 @media (min-width: 1435px) {
 	.menu-nav-buttons a {
-		margin: 4px 70px;
+		margin: 4px 50px;
 	}
 }
 
